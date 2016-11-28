@@ -18,13 +18,21 @@ function _connection(vars) {
 
 
 mongoose.Promise = require('bluebird');
+//onsole.log(_connection(env.database));
 mongoose.connect(_connection(env));
+
+//mongoose.connect(env.database.uri, env.database.credentials);
+
 mongoose.set('debug', true);
 
-let db = mongoose.connection;
+const db = mongoose.connection;
 /* istanbul ignore next */
 db.on('error', function(err) {
   debug(err);
+});
+
+db.on('open', () => {
+	console.log(`Connected with: ${env.database.uri}`);
 });
 
 db.once('open', function (callback) {
