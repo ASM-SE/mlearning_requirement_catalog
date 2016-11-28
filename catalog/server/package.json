@@ -4,16 +4,19 @@
   "description": "Servidor do catálogo",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "export NODE_ENV=test; export DEBUG=catalog:*;",
+    "server": "export DEBUG=delivery-admin:*; nodemon ./server/bin/www"
   },
   "author": "Anderson Marcolino",
   "license": "GPL-3.0",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
+    "debug": "^2.3.3",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "mongojs": "^2.4.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7"
   }
