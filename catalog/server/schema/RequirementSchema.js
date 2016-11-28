@@ -3,7 +3,7 @@
 let mongoose            = require('../config/MongooseConfig');
 
 
-let CustomerSchema = mongoose.Schema({
+let RequirementSchema = mongoose.Schema({
 	rq_id: {type: String, trim: true, required: true, maxlength: 7},
 	rq_prod_prob: {type: Array, trim: true},
 	rq_modality: {type: String, required: true},

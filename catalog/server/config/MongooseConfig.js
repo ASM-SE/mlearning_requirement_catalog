@@ -1,8 +1,8 @@
 'use strict';
 
-let mongoose  = require('mongoose'),
-    debug     = require('debug')('catalog:config:mongoose'),
-    config    = require('./env');
+let mongoose  = require('mongoose');
+let debug     = require('debug')('catalog:config:mongoose');
+let env    = require('../env');
 
 function _connection(vars) {
   let username  = vars.MONGO_USERNAME || env.database.credentials.user,
@@ -11,14 +11,14 @@ function _connection(vars) {
       port      = vars.MONGO_PORT     || '27017',
       database  = vars.MONGO_DATABASE || env.database.uri,
 
-      auth = username ? /* istanbul ignore next */ username + ':' + password + '@' : '';
 
-  return 'mongodb://' + auth + host + ':' + port + '/' + database;
+      auth = username ? /* istanbul ignore next */ username + ':' + password + '@' : '';
+  return 'mongodb://' + host + ':' + port + '/' + database, username, password;
 }
 
 
 mongoose.Promise = require('bluebird');
-mongoose.connect(_connection(process.env));
+mongoose.connect(_connection(env));
 mongoose.set('debug', true);
 
 let db = mongoose.connection;

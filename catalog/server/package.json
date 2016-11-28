@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "export NODE_ENV=test; export DEBUG=catalog:*;",
-    "server": "export DEBUG=delivery-admin:*; nodemon ./server/bin/www"
+    "prestart": "npm install",
+    "start": "export DEBUG=requirement:*; nodemon ./bin/www"    
   },
   "author": "Anderson Marcolino",
   "license": "GPL-3.0",

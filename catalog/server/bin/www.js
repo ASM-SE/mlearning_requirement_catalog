@@ -1,6 +1,6 @@
 'use strict';
 
-let debug = require('debug')('requirement:controller:connection'),
+const debug = require('debug')('requirement:controller:connection');
 const app = require('../app');
 const env = require('../env');
 

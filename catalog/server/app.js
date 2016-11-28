@@ -9,7 +9,6 @@ const bodyParser 	= require('body-parser');
 const compression 	= require('compression');
 const debug       	= require('debug')('requirement:app');
 const AppController = require('./controller/AppController');
-
 const app 			= express();
  
 app.set('views', path.join(__dirname, 'views'));		//?
@@ -27,5 +26,9 @@ app.use(require('./router'));					//Importa arquivos de rota
 app.use(AppController.notFound);
 app.use(AppController.errorHandler);
  
+
+
+
 debug('env:', process.env.NODE_ENV || 'development');
+
 module.exports = app;
