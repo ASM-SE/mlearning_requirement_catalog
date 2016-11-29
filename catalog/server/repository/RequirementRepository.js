@@ -1,8 +1,8 @@
 'use strict';
 
-let mongoose            = require('../db');
+let mongoose            = require('../config/MongooseConfig');
 let schema              = require('../schema/RequirementSchema');
 
-let RequirementRepository  = mongoose.model('requirement', schema);
+let RequirementRepository  = mongoose.model('requirements', schema);
 
 module.exports = RequirementRepository;

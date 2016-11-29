@@ -6,7 +6,7 @@
   "scripts": {
     "test": "export NODE_ENV=test; export DEBUG=catalog:*;",
     "prestart": "npm install",
-    "start": "export DEBUG=requirement:*; nodemon ./bin/www"    
+    "start": "export DEBUG=requirement:*; nodemon ./bin/www"
   },
   "author": "Anderson Marcolino",
   "license": "GPL-3.0",
@@ -15,9 +15,11 @@
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
     "debug": "^2.3.3",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
+    "mongoose": "^4.7.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7"
   }

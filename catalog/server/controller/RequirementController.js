@@ -21,7 +21,7 @@ let RequirementController = {
         ]
       };
     }
-    debug('query', query);
+   debug('query', query);
 
     bluebird.all([
       repository.find(query).limit(PER_PAGE).skip(PER_PAGE * (page - 1)).sort({ _id: - 1 }),
