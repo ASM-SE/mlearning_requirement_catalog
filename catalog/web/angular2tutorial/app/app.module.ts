@@ -27,3 +27,5 @@ import { AppRoutingModule } from './app-routing.module';
 })
 export class AppModule { }
 
+//TODO Styling the App item 6
+
