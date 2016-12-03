@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -13,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor(private heroService : HeroService, private router : AppRoutingModule) {}
+  constructor(private heroService : HeroService, private router : Router) {}
 
 
   heroes: Hero[];
