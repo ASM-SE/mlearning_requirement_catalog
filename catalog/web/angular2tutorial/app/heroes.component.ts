@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
   moduleId: module.id,
   selector: 'my-heroes',
   templateUrl: 'heroes.component.html',  
-  styles: ['heroes.component.css'],
+  styleUrls: ['heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
 
