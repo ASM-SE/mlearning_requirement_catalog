@@ -10,7 +10,7 @@ import { Hero } from './hero';
     /*    getHeroes(): Promise<Hero[]> {
            return Promise.resolve(HEROES); 
         }*/
-
+  private headers = new Headers({'Content-Type': 'application/json'});
   private heroesUrl = 'app/heroes';  // URL to web api
 
   constructor(private http: Http) { }         
@@ -22,10 +22,7 @@ import { Hero } from './hero';
                 .catch(this.handleError);
         }
 
-        private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-        }        
+      
 
         update(hero:Hero): Promise<Hero>{
             const url = `${this.heroesUrl}/${hero.id}`;
@@ -37,6 +34,14 @@ import { Hero } from './hero';
         }
 
 
+        create(name: string): Primise<Hero> {
+            return this.http
+                .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+                .toPromise()
+                .then(res => res.json().data)
+                .catch(this.handleError);
+        }
+
         getHeroesSlowly(): Promise<Hero[]> {
         return new Promise<Hero[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds
@@ -47,5 +52,10 @@ import { Hero } from './hero';
             return this.getHeroes()
                 .then(heroes =>  heroes.find(hero => hero.id === id));
         }
+
+        private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+        }          
 
     }
