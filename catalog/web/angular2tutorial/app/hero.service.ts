@@ -27,6 +27,16 @@ import { Hero } from './hero';
         return Promise.reject(error.message || error);
         }        
 
+        update(hero:Hero): Promise<Hero>{
+            const url = `${this.heroesUrl}/${hero.id}`;
+            return this.http
+                .put(url, JSON.stringify(hero), {headers: this.headers})
+                .toPromise()
+                .then(() => hero)
+                .catch(this.handleError);
+        }
+
+
         getHeroesSlowly(): Promise<Hero[]> {
         return new Promise<Hero[]>(resolve =>
             setTimeout(resolve, 2000)) // delay 2 seconds
