@@ -21,4 +21,3 @@ export class DashboardComponent implements OnInit {
 
 }
 
-//TODO Refactor routes to a Routing Module Item 6

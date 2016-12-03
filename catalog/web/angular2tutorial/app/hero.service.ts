@@ -34,7 +34,7 @@ import { Hero } from './hero';
         }
 
 
-        create(name: string): Primise<Hero> {
+        create(name: string): Promise<Hero> {
             return this.http
                 .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
                 .toPromise()
