@@ -20,7 +20,7 @@ const routes: Routes = [
         component: HeroDetailComponent 
     },
     {
-        path: 'heores', 
+        path: 'heroes', 
         component: HeroesComponent 
     }
 ];
