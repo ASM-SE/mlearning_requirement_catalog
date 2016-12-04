@@ -4,9 +4,9 @@
   "description": "Servidor do catálogo",
   "main": "app.js",
   "scripts": {
-    "test": "export NODE_ENV=test; export DEBUG=catalog:*;",
+    "test": "", 
     "prestart": "npm install",
-    "start": "export DEBUG=requirement:*; nodemon ./bin/www"
+    "start": "nodemon ./bin/www" 
   },
   "author": "Anderson Marcolino",
   "license": "GPL-3.0",

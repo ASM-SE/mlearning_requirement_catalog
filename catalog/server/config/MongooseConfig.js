@@ -9,7 +9,7 @@ mongoose.connect(env.database.uri, env.database.credentials);
 
 
 mongoose.set('debug', true);
-
+ 
 const db = mongoose.connection;
 /* istanbul ignore next */
 db.on('error', function(err) {
