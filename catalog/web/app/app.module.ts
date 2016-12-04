@@ -5,7 +5,8 @@ import { HttpModule }    from '@angular/http';
 
 //User imports
 import { AppComponent }  from './app.component';
-import { APP_CONFIG, AppConfig } from './config/app.config'; //Constants to access the end points from server(s)
+import { SharedSettingsService } from './services/shared-settings.service'; //Constants to access the end points from server(s)
+
 
 @NgModule({
   imports:      [ 
@@ -16,7 +17,7 @@ import { APP_CONFIG, AppConfig } from './config/app.config'; //Constants to acce
       AppComponent 
       ],
   providers:    [
-      { provide: APP_CONFIG, useValue: AppConfig}
+      SharedSettingsService,
       ],
   bootstrap:    [ 
       AppComponent 

@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
 
-import { APP_CONFIG, IAppConfig } from './config/app.config';
+
+import { SharedSettingsService } from '../services/shared-settings.service';
 
 @Injectable()
-export class RequirementsService {
+export class RequirementService {
     
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig){
+    constructor(private http: Http, private api: SharedSettingsService){}
+    
+    getRequirements = () =>{
+         return this.http.get(this.api.requirements);
+    };
 
-    }
+};
 
 
-}
+
