@@ -11,13 +11,22 @@ import { SharedSettingsService } from './services/shared-settings.service'; //Co
 import { RequirementService } from './requirements/requirement.service';    //Sevico - antigo controller (angularJS)
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
+//Angular Material
+import {MdCardModule} from ‘@angular2-material/card’;
+import {MdButtonModule} from ‘@angular2-material/button’;
+import {MdIconModule} from ‘@angular2-material/icon’;
+import {MdIconRegistry} from ‘@angular2-material/icon’;
+
 import './rxjs-extensions';
 
 @NgModule({
   imports:      [ 
       BrowserModule, 
       HttpModule,
-      AppRoutingModule
+      AppRoutingModule,
+      MdCardModule,
+      MdButtonModule,
+      MdIconModule
       ],
   declarations: [ 
       AppComponent,
@@ -25,7 +34,8 @@ import './rxjs-extensions';
       ],
   providers:    [
       SharedSettingsService,
-      RequirementService
+      RequirementService,
+      MdIconRegistry
       ],
   bootstrap:    [ 
       AppComponent 
