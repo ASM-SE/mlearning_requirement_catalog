@@ -8,7 +8,11 @@ import { Requirement } from './requirement';
 @Injectable()
 export class RequirementService {
     
-    constructor(private http: Http, private api: SharedSettingsService){}
+    constructor(private http: Http, private api: SharedSettingsService){
+
+        
+console.log('O que tem aqui' + api.requirements);
+    }
     
   /*  getRequirements = () =>{
          return this.http.get(this.api.requirements);
@@ -21,6 +25,7 @@ export class RequirementService {
             })
     }
 */
+
 
         getRequirements() : Promise<Requirement[]> {
             return this.http.get(this.api.requirements)

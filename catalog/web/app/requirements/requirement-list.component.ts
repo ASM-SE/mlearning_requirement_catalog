@@ -7,7 +7,7 @@ import { RequirementService } from './requirement.service';
 @Component({
     moduleId: module.id,
     selector: 'requirements-list',
-    templateUrl: 'requirements.list.html',
+    templateUrl: 'requirements-list.component.html',
 })
 export class RequirementsListComponent {  //Removi implements OnInit
 

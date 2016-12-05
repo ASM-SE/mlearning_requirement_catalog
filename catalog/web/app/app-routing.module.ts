@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
 const routes: Routes = [
-    { 
+  /*  { 
         path: '',
         redirectTo: '/requirement',
         pathMatch: 'full'
-    },
+    },*/
     {
         path: 'requirement',
         component: RequirementsListComponent
