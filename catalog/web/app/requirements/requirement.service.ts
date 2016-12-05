@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { SharedSettingsService } from '../services/shared-settings.service';
+import { Requirement } from './requirement';
 
 @Injectable()
 export class RequirementService {
@@ -13,18 +14,18 @@ export class RequirementService {
          return this.http.get(this.api.requirements);
     };
 
-    getReq = () => {
-        getRequirements()
+   /* getReq = () => {
+        this.getRequirements()
             .then((res) => {
                 this.requirement = res.data;
             })
     }
+*/
 
-
-        getHeroes() : Promise<Req[]> {
+        getHeroes() : Promise<Requirement[]> {
             return this.http.get(this.api.requirements)
                 .toPromise()
-                .then(response => response.json().data as Req[])
+                .then(response => response.json().data as Requirement[])
                 .catch(this.handleError);
         }
     
