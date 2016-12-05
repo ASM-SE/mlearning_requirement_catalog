@@ -6,6 +6,7 @@ import { HttpModule }    from '@angular/http';
 //User imports
 import { AppComponent }  from './app.component';
 import { SharedSettingsService } from './services/shared-settings.service'; //Constants to access the end points from server(s)
+import { RequirementService } from './requirements/requirement.service';    //Sevico - antigo controller (angularJS)
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SharedSettingsService } from './services/shared-settings.service'; //Co
       ],
   providers:    [
       SharedSettingsService,
+      RequirementService
       ],
   bootstrap:    [ 
       AppComponent 
