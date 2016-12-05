@@ -17,3 +17,5 @@ export class RequirementService {
 
 
 
+//TODO
+//Requiment Controller >> In angular 2 controller is not used anymore. So, verify migration from a controller (AngularJS) to angular 2
