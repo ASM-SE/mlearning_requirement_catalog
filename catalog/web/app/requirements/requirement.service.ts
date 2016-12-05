@@ -10,11 +10,11 @@ export class RequirementService {
     
     constructor(private http: Http, private api: SharedSettingsService){}
     
-    getRequirements = () =>{
+  /*  getRequirements = () =>{
          return this.http.get(this.api.requirements);
     };
 
-   /* getReq = () => {
+    getReq = () => {
         this.getRequirements()
             .then((res) => {
                 this.requirement = res.data;
@@ -22,7 +22,7 @@ export class RequirementService {
     }
 */
 
-        getHeroes() : Promise<Requirement[]> {
+        getRequirements() : Promise<Requirement[]> {
             return this.http.get(this.api.requirements)
                 .toPromise()
                 .then(response => response.json().data as Requirement[])

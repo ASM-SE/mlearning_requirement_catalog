@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RequirementComponent } from './requirements/requirement.component';
+import { RequirementsListComponent } from './requirements/requirement-list.component';
 
 const routes: Routes = [
     { 
@@ -11,7 +11,7 @@ const routes: Routes = [
     },
     {
         path: 'requirement',
-        component: RequirementComponent
+        component: RequirementsListComponent
     },
 ];
 
