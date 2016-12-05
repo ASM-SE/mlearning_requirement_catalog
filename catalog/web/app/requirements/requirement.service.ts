@@ -9,9 +9,6 @@ import { Requirement } from './requirement';
 export class RequirementService {
     
     constructor(private http: Http, private api: SharedSettingsService){
-
-        
-console.log('O que tem aqui' + api.requirements);
     }
     
   /*  getRequirements = () =>{

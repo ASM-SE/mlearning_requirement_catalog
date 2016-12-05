@@ -9,16 +9,25 @@ import { RequirementService } from './requirement.service';
     selector: 'requirements-list',
     templateUrl: 'requirements-list.component.html',
 })
-export class RequirementsListComponent {  //Removi implements OnInit
+export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
 
-    requirements: Requirement[];
-    selectedRequirement: Requirement;
+    requirementsx: Requirement[] = [];
+   // selectedRequirement: Requirement;
 
     constructor(private reqSvc : RequirementService, private router : Router) {}
 
-    getRequirements() : void {
+  /*  getRequirements() : void {
         this.reqSvc.getRequirements().then(requirements => this.requirements = requirements);
+    }*/
+
+
+
+    ngOnInit(): void {
+        this.reqSvc.getRequirements().then(requirementsx => this.requirementsx = requirementsx);
+        console.log(this.requirementsx);
     }
+
+
 
 }
 

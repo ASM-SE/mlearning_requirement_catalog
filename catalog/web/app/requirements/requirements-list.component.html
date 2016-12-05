@@ -1,4 +1,9 @@
 <div>
     <h1>Requirements</h1>
-  
+    <ul>
+        <li *ngFor="let requirement of requirementsx ">
+            {{requirement.rq_id}}
+            {{requirement.rq_requirement}}            
+        </li>
+    </ul>
 </div>

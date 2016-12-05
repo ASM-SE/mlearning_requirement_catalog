@@ -7,6 +7,19 @@ const PER_PAGE  = 10;
 
 let RequirementController = {
 
+ getUsers: (req, res) =>{
+  let query = {};
+  let fields = {};
+  repository.find(query, fields)
+  .then((data) =>{
+    res.send(data);
+  })
+  .catch((err) =>{
+    res.status(500).send(err);
+  });
+  //  res.send(User.get(req.query.name)); //Antes sem o mongodb
+},
+
   list: (request, response, next) => {
     let query = {};
     let page = parseInt(request.query.page || 1, 10);
