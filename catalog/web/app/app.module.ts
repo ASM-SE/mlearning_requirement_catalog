@@ -12,10 +12,10 @@ import { RequirementService } from './requirements/requirement.service';    //Se
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
 //Angular Material
-import {MdCardModule} from ‘@angular2-material/card’;
-import {MdButtonModule} from ‘@angular2-material/button’;
-import {MdIconModule} from ‘@angular2-material/icon’;
-import {MdIconRegistry} from ‘@angular2-material/icon’;
+import {MdCardModule} from '@angular2-material/card';
+import {MdButtonModule} from '@angular2-material/button';
+import {MdIconModule} from '@angular2-material/icon';
+import {MdIconRegistry} from '@angular2-material/icon';
 
 import './rxjs-extensions';
 

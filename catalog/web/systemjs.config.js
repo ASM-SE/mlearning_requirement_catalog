@@ -27,7 +27,6 @@
       'rxjs':                      'npm:rxjs',
 
       // Angular Material (User)
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       '@angular2-material/core': 'npm:@angular2-material/core/core.umd.js',
       '@angular2-material/card': 'npm:@angular2-material/card/card.umd.js',
       '@angular2-material/button': 'npm:@angular2-material/button/button.umd.js',
