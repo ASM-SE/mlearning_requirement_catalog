@@ -1,12 +1,29 @@
-<div>
-    <h1>Requirements</h1>
-    <ul>
-        <li *ngFor="let requirement of requirementsx ">
-            {{requirement.rq_id}}
-            {{requirement.rq_requirement}}            
-        </li>
-    </ul>
+<div layout="row" layout-xs="column">
+
+
+
+      <md-list class="md-dense" layout="row" layout-xs="column">
+      <md-list-item *ngFor="let requirement of requirementsx" flex>
+
+         <div layout="row" layout-xs="column" layout-align="center center">
+           <div flex>
+             {{requirement.rq_id}}
+           </div> 
+           <div flex>
+             {{requirement.rq_requirement}}
+           </div>
+         </div>
+   
+      </md-list-item>
+
+    </md-list>
+
 </div>
+
+
+
+
+
 
 
 <div class="app-content">
@@ -27,7 +44,7 @@
   </md-card>
   <md-card>
     <button md-raised-button color="primary">PRIMARY</button>
-    <button md-raised-button color="accent">ACCENT</button>
+    <button md-raised-button  color="accent">ACCENT</button>
     <button md-raised-button color="warn">WARN</button>
   </md-card>
   <md-card>
@@ -35,4 +52,6 @@
     <button md-raised-button disabled>OFF</button>
     <button md-mini-fab disabled><md-icon>check</md-icon></button>
   </md-card>
+
+
 </div>

@@ -12,21 +12,18 @@ import { RequirementService } from './requirements/requirement.service';    //Se
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
 //Angular Material
-import {MdCardModule} from '@angular2-material/card';
-import {MdButtonModule} from '@angular2-material/button';
-import {MdIconModule} from '@angular2-material/icon';
-import {MdIconRegistry} from '@angular2-material/icon';
+import { MaterialModule } from '@angular/material';
 
+
+//importar o list
 import './rxjs-extensions';
 
 @NgModule({
   imports:      [ 
-      BrowserModule, 
+      BrowserModule,
+      MaterialModule.forRoot(), 
       HttpModule,
-      AppRoutingModule,
-      MdCardModule,
-      MdButtonModule,
-      MdIconModule
+      AppRoutingModule
       ],
   declarations: [ 
       AppComponent,
@@ -34,8 +31,7 @@ import './rxjs-extensions';
       ],
   providers:    [
       SharedSettingsService,
-      RequirementService,
-      MdIconRegistry
+      RequirementService
       ],
   bootstrap:    [ 
       AppComponent 
