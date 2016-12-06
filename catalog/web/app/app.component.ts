@@ -5,33 +5,38 @@ import { Component } from '@angular/core';
   template: ` 
 
 <md-sidenav-layout> <!--Ddeve ser fechado até onde o sidenav deve sobrepor-->
-    <md-sidenav #left mode="side" layout-padding>
-     <nav>
-              <a routerLink="/requirement" routerLinkActive="active">Requirement</a>
-            </nav>
-  </md-sidenav>
+   
+        <md-sidenav #left mode="side">
+          <nav>
+            <a routerLink="/requirement" routerLinkActive="active">Requirement</a>
+          </nav>
+    </md-sidenav>
 
- <md-toolbar color="primary">
-    <button md-icon-button aria-label="Settings" (click)="left.toggle()">
-      <md-icon>menu</md-icon>
-    </button>
+    <md-toolbar color="primary">
 
-  <span>Toolbar with Icon Buttons</span>
- <span class="app-toolbar-filler"></span>
-    <button md-icon-button class="md-24" aria-label="More">
-    <md-icon>more_vert</md-icon>
+          <button md-icon-button aria-label="Settings" (click)="left.toggle()">
+            <md-icon>menu</md-icon>
+          </button>
+
+        Toolbar with Icon Buttons
+    <span flex></span>
+                
+          <button md-icon-button layout="row" layout-align="end start" aria-label="More">
+            <md-icon>more_vert</md-icon>
+          </button>
+<span flex></span>
+            <button md-raised-button aria-label="Learn More">
+    Learn More
   </button>
 
-  </md-toolbar>
+    </md-toolbar>
 
 
-
- <div class="app-content">
-
-            <router-outlet></router-outlet>
-
-</div>
-  </md-sidenav-layout>
+    <div class="app-content">
+                <router-outlet></router-outlet>
+    </div>
+ 
+ </md-sidenav-layout>
 
           
     `,
