@@ -8,8 +8,8 @@
              {{requirement.rq_requirement}}
           </p>
 
-  <p>Selected Value: <span class="radioValue">Valor aqui</span></p>
-  <md-radio-group >
+  <p>Selected Value: <span class="radioValue">{{data.default}}</span></p>
+  <md-radio-group  [(ngModel)]="data.default" [ngModelOptions]="{standalone: false}">
               <md-radio-button value="1" class="md-primary" >1</md-radio-button>
               <md-radio-button value="2" class="md-primary">2</md-radio-button>
               <md-radio-button value="3" class="md-primary">3</md-radio-button>
@@ -17,6 +17,8 @@
               <md-radio-button value="5" class="md-primary">5</md-radio-button>
             
             </md-radio-group>
+       <p> <md-input placeholder="Observações" style="width: 100%"></md-input> </p>
+       
         </div>
       </md-list-item>    
       </div>

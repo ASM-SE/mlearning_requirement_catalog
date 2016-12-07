@@ -15,13 +15,15 @@ import { RequirementsListComponent } from './requirements/requirement-list.compo
 import { MaterialModule } from '@angular/material';
 
 
+
 //importar o list
 import './rxjs-extensions';
 
 @NgModule({
   imports:      [ 
       BrowserModule,
-      MaterialModule.forRoot(), 
+      MaterialModule.forRoot(),
+      FormsModule,
       HttpModule,
       AppRoutingModule
       ],

@@ -8,7 +8,9 @@ const PER_PAGE  = 10;
 let RequirementController = {
 
  getUsers: (req, res) =>{
-  let query = {};
+ // let query = {rq_id::/^RNF/}; //Contenha RNF
+let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
+  
   let fields = {};
   repository.find(query, fields)
   .then((data) =>{
