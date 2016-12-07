@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 
 <md-sidenav-layout> <!--Ddeve ser fechado até onde o sidenav deve sobrepor-->
    
-        <md-sidenav #left mode="side">
+    <md-sidenav #left mode="side" layout-padding>
           <nav>
             <a routerLink="/requirement" routerLinkActive="active">Requirement</a>
           </nav>
@@ -14,22 +14,15 @@ import { Component } from '@angular/core';
 
     <md-toolbar color="primary">
 
-          <button md-icon-button aria-label="Settings" (click)="left.toggle()">
+          <button md-icon-button class="app-icon-button" (click)="left.toggle()">
             <md-icon>menu</md-icon>
           </button>
 
         Toolbar with Icon Buttons
-    <span flex></span>
-                
-          <button md-icon-button layout="row" layout-align="end start" aria-label="More">
-            <md-icon>more_vert</md-icon>
-          </button>
-<span flex></span>
-            <button md-raised-button aria-label="Learn More">
-    Learn More
-  </button>
-
+    
     </md-toolbar>
+
+
 
 
     <div class="app-content">

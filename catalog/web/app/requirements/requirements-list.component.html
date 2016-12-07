@@ -1,17 +1,23 @@
 
 
-      <md-list class="md-dense">
-      <md-list-item *ngFor="let requirement of requirementsx" flex>
-
-         <div layout="row"  >
-           <div flex>
-             {{requirement.rq_id}}
-           </div> 
-           <div flex>
+    <div class="teste">
+      <md-list-item *ngFor="let requirement of requirementsx" class="md-3-line md-long-text">
+        <div class="md-list-item-text teste">
+          <h3>{{requirement.rq_id}}</h3>
+          <p>
              {{requirement.rq_requirement}}
-           </div>
-         </div>
-   
-      </md-list-item>
+          </p>
 
-    </md-list>
+  <p>Selected Value: <span class="radioValue">Valor aqui</span></p>
+  <md-radio-group >
+              <md-radio-button value="1" class="md-primary" >1</md-radio-button>
+              <md-radio-button value="2" class="md-primary">2</md-radio-button>
+              <md-radio-button value="3" class="md-primary">3</md-radio-button>
+              <md-radio-button value="4" class="md-primary">4</md-radio-button>
+              <md-radio-button value="5" class="md-primary">5</md-radio-button>
+            
+            </md-radio-group>
+        </div>
+      </md-list-item>    
+      </div>
+
