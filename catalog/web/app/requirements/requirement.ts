@@ -1,7 +1,7 @@
 export class Requirement {
 
 	rq_id: string;
-	rq_prod_prob: string;
+	rq_prog_prob: string;
     rq_modality: string;
 	rq_ml_type:  string; 
 	rq_ml_modification:  string;

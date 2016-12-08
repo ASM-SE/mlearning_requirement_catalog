@@ -9,8 +9,8 @@ let RequirementController = {
 
  getUsers: (req, res) =>{
  // let query = {rq_id::/^RNF/}; //Contenha RNF
-let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
-  
+ //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
+  let query = {};
   let fields = {};
   repository.find(query, fields)
   .then((data) =>{
