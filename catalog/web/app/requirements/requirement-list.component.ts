@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
+
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
 
@@ -9,7 +10,7 @@ import { RequirementService } from './requirement.service';
     moduleId: module.id,
     selector: 'requirements-list',
     templateUrl: 'requirements-list.component.html',
-    styleUrls: ['requirement-list.component.css'],
+    styleUrls: ['requirement-list.component.css'],  
 })
 export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
 
@@ -39,6 +40,14 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
       console.log(this.selectedRequirement);
     }  
 
+  status: string = '';
+  customClose(interesting: boolean) {
+    if (interesting) {
+      this.status = 'That article was interesting.';
+    } else {
+      this.status = 'Look for something else.';
+    }
+  }
 
 
 
