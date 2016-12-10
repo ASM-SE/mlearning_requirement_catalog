@@ -4,17 +4,17 @@
       <md-list-item *ngFor="let requirement of requirementsx" class="md-3-line md-long-text">
         <div class="md-list-item-text teste">
           <h3>{{requirement.rq_id}}</h3>    
-	 <p>prog_prob: {{requirement.rq_prog_prob}} </p>
-   <p>modality: {{requirement.rq_modality}} </p>
-	 <p>ml_type: {{requirement.rq_ml_type}} </p>
-	 <p>ml_modification: {{requirement.rq_ml_modification}} </p>
-	 <p>type_cat: {{requirement.rq_type_cat}} </p>
-	 <p>theories: {{requirement.rq_theories}} </p>
-	 <p>subcategory: {{requirement.rq_subcategory}} </p>
-	 <p>requirement: {{requirement.rq_requirement}} </p>
-	 <p>description: {{requirement.rq_description}} </p>
-	 <p>cross_referencue: {{requirement.rq_cross_reference}} </p>
-	 <p>variability: {{requirement.rq_variability}} </p>
+            <p>prog_prob: {{requirement.rq_prog_prob}} </p>
+            <p>modality: {{requirement.rq_modality}} </p>
+            <p>ml_type: {{requirement.rq_ml_type}} </p>
+            <p>ml_modification: {{requirement.rq_ml_modification}} </p>
+            <p>type_cat: {{requirement.rq_type_cat}} </p>
+            <p>theories: {{requirement.rq_theories}} </p>
+            <p>subcategory: {{requirement.rq_subcategory}} </p>
+            <p>requirement: {{requirement.rq_requirement}} </p>
+            <p>description: {{requirement.rq_description}} </p>
+            <p>cross_referencue: {{requirement.rq_cross_reference}} </p>
+            <p>variability: {{requirement.rq_variability}} </p>
 
   <p>Selected Value: <span class="radioValue">{{data.default}}</span></p>
   <md-radio-group  [(ngModel)]="data.default" [ngModelOptions]="{standalone: false}">
