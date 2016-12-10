@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+
 
 
 @Component({
@@ -44,12 +45,15 @@ import { Component } from '@angular/core';
     
     </md-sidenav-layout>
 
+
     `,
   styleUrls: ['/app.component.css']
 
 })
 export class AppComponent  { 
   title = 'M-learning Requirement Catalog'; 
+
+
 }
 
 

@@ -14,6 +14,8 @@ import { RequirementsListComponent } from './requirements/requirement-list.compo
 //Angular Material
 import { MaterialModule } from '@angular/material';
 
+//User Modules
+import { DialogsModule } from './modules/dialogs.module';
 
 
 //importar o list
@@ -25,7 +27,8 @@ import './rxjs-extensions';
       MaterialModule.forRoot(),
       FormsModule,
       HttpModule,
-      AppRoutingModule
+      AppRoutingModule,
+      DialogsModule
       ],
   declarations: [ 
       AppComponent,

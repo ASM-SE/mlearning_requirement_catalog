@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-
+import {DialogsService} from '../services/dialogs.service';
 
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
@@ -16,9 +16,13 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
 
     requirementsx: Requirement[] = [];
     selectedRequirement: Requirement;
+    result: any;
 
          data: any = {default: 'Banana'};
-    constructor(private reqSvc : RequirementService, private router : Router) { }
+    constructor(private reqSvc : RequirementService, 
+                private router : Router,
+                private dialogsService: DialogsService, 
+                private viewContainerRef: ViewContainerRef) { }
 
     onSelect(requirement: Requirement): void {
       this.selectedRequirement = requirement;
@@ -47,6 +51,13 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
     } else {
       this.status = 'Look for something else.';
     }
+  }
+
+
+  openDialog(requirement) {
+    this.dialogsService
+      .confirm('Confirm Dialog', requirement.rq_requirement, this.viewContainerRef)
+      .subscribe(res => this.result = res);
   }
 
 
