@@ -28,7 +28,7 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
 
  
 
-    ngOnInit(): void {
+    ngOnInit(): void {  //Idem ao init-form
         this.reqSvc.getTest().subscribe(res => { this.requirementsx = res });
     }
 
