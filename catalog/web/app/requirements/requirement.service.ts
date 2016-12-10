@@ -14,15 +14,21 @@ export class RequirementService {
     constructor(private http: Http, private api: SharedSettingsService){
     }
     
-    getTest() {
+    getRequirements() {
         return this.http.get(this.api.requirements)
             .map(res => res.json());
     }
 
-        getHero(id : number): Promise<Hero> {
+
+    getRequirement(requirement) {
+        return this.http.get(this.api.requirements + "/" + requirement)
+            .map(res => res.json());
+    }    
+
+     /*   getHero(id : number): Promise<Hero> {
             return this.getHeroes()
                 .then(heroes =>  heroes.find(hero => hero.id === id));
-        }    
+        }*/    
 
 
 };

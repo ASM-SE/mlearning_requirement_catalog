@@ -7,20 +7,48 @@ const PER_PAGE  = 10;
 
 let RequirementController = {
 
- getUsers: (req, res) =>{
- // let query = {rq_id::/^RNF/}; //Contenha RNF
- //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
+ getRequirements: (request, response, next) =>{
+    // let query = {rq_id::/^RNF/}; //Contenha RNF
+    //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
   let query = {};
   let fields = {};
   repository.find(query, fields)
-  .then((data) =>{
-    res.send(data);
-  })
-  .catch((err) =>{
-    res.status(500).send(err);
-  });
-  //  res.send(User.get(req.query.name)); //Antes sem o mongodb
-},
+    .then((result) =>{
+      if (!result) {
+        let err = new Error('Requirements not found.');
+        err.status = 500;
+        throw err;
+      }
+      return result;
+    })
+    .then(function(result) {
+      response.json(result);
+    })
+    .catch(next);
+  },
+
+
+
+  byId: (request, response, next) =>{
+    let _id = request.params._id;
+    repository.findOne({ _id: _id })
+    .then((result) =>{
+      if (!result) {
+        let err = new Error('Requirement not found.');
+        err.status = 404;
+        throw err;
+      }
+      return result;
+    })
+    .then(function(result) {
+      response.json(result);
+    })
+    .catch(next);
+  },
+
+
+
+
 
   list: (request, response, next) => {
     let query = {};
@@ -60,22 +88,6 @@ let RequirementController = {
     .catch(next);
   },
 
-  byId: (request, response, next) => {
-    let _id = request.params._id;
-    repository.findOne({ _id: _id })
-    .then(function(result) {
-      if (!result) {
-        let err = new Error('Requirement not found.');
-        err.status = 404;
-        throw err;
-      }
-      return result;
-    })
-    .then(function(result) {
-      response.json(result);
-    })
-    .catch(next);
-  },
 
   create: (request, response, next) => {
     let requirement = new repository(request.body);

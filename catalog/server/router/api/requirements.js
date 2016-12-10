@@ -4,7 +4,7 @@ let router                 = require('express').Router();
 let RequirementController  = require('../../controller/RequirementController');
 
 
-router.get('/', RequirementController.getUsers);
+router.get('/', RequirementController.getRequirements);
 router.get('/:_id', RequirementController.byId);
 router.post('/', RequirementController.create);
 router.put('/:_id', RequirementController.update);

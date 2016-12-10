@@ -14,13 +14,14 @@ import { RequirementService } from './requirement.service';
 export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
 
     requirementsx: Requirement[] = [];
-      selectedHero: Requirement;
-   // selectedRequirement: Requirement;
+    selectedRequirement: Requirement;
 
          data: any = {default: 'Banana'};
-    constructor(private reqSvc : RequirementService, private router : Router) {
+    constructor(private reqSvc : RequirementService, private router : Router) { }
 
-    }
+    onSelect(requirement: Requirement): void {
+      this.selectedRequirement = requirement;
+    }    
 
   /*  getRequirements() : void {
         this.reqSvc.getRequirements().then(requirements => this.requirements = requirements);
@@ -29,15 +30,16 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
  
 
     ngOnInit(): void {  //Idem ao init-form
-        this.reqSvc.getTest().subscribe(res => { this.requirementsx = res });
+        this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
     }
 
+    gotoDetail(requirement: Requirement): void {
+     /* this.router.navigate(['/detail', this.selectedRequirement._id]);*/
+          this.selectedRequirement = requirement;
+      console.log(this.selectedRequirement);
+    }  
 
 
-
-  onSelect(hero: Requirement): void {
-    this.selectedHero = hero;
-  }
 
 
 }

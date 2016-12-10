@@ -1,7 +1,9 @@
 
 
     <div>
-      <md-list-item *ngFor="let requirement of requirementsx" class="md-3-line md-long-text">
+      <md-list-item *ngFor="let requirement of requirementsx" class="md-3-line md-long-text requirement"
+        [class.selected]="requirement === selectedRequirement" 
+        (click)="onSelect(requirement)">
         <div class="md-list-item-text teste">
           <h3>{{requirement.rq_id}}</h3>    
             <p>prog_prob: {{requirement.rq_prog_prob}} </p>
@@ -28,6 +30,7 @@
        <p> <md-input placeholder="Observações" style="width: 100%"></md-input> </p>
        
         </div>
+              <button (click)="gotoDetail(requirement)">View Details</button>
       </md-list-item>    
       </div>
 

@@ -1,5 +1,6 @@
 export class Requirement {
 
+	_id: string;
 	rq_id: string;
 	rq_prog_prob: string;
     rq_modality: string;

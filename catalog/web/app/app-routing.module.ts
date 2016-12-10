@@ -13,10 +13,10 @@ const routes: Routes = [
         path: 'requirement',
         component: RequirementsListComponent
     },
-    {
+  /*  {
         path: 'requirement/:id',
         component: RequirementFormComponent
-    }    
+    }   */ 
 ];
 
 @NgModule({
