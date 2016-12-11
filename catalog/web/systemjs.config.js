@@ -29,10 +29,7 @@
       // Angular2-Material
       '@angular/material': 'npm:@angular/material/material.umd.js',
 
-      //Trying PrimeNG
-      'primeng':                   'npm:primeng',  
-
-      //Trying BootstrapNG
+      //BootstrapNG IMporting and Depence Source: https://github.com/valor-software/ng2-bootstrap
       'moment': 'node_modules/moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',    
     },
@@ -44,10 +41,7 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      },
-      primeng: {
-          defaultExtension: 'js'
-      }      
+      }     
     }
   });
 })(this);

@@ -1,75 +1,42 @@
 
 
     <div>
-      <md-list-item *ngFor="let requirement of requirementsx" class="md-3-line md-long-text requirement"
-        [class.selected]="requirement === selectedRequirement" 
-        (click)="onSelect(requirement)">
-        <div class="md-list-item-text teste">
-          <h3>{{requirement.rq_id}}</h3>    
+      <accordion      [closeOthers]="oneAtATime"> <!--Abrir fora e fechar fora do md-list para poder deixar apenas um aberto por vez-->
+      <md-list-item   *ngFor="let requirement of requirementsx" 
+                      class="md-3-line md-long-text requirement"
+                      [class.selected]="requirement === selectedRequirement" 
+                      (click)="onSelect(requirement)">
+        <div class="md-list-item-text rq_list">
+            <h3>{{requirement.rq_id}}</h3>    
             <p><b>Requirement: </b> {{requirement.rq_requirement}} </p>
-              <button (click)="gotoDetail(requirement)">View Details</button>
-  <p>Selected Value: <span class="radioValue">{{data.default}}</span></p>
-  <md-radio-group  [(ngModel)]="data.default" [ngModelOptions]="{standalone: false}">
-              <md-radio-button value="1" class="md-primary" >1</md-radio-button>
-              <md-radio-button value="2" class="md-primary">2</md-radio-button>
-              <md-radio-button value="3" class="md-primary">3</md-radio-button>
-              <md-radio-button value="4" class="md-primary">4</md-radio-button>
-              <md-radio-button value="5" class="md-primary">5</md-radio-button>
             
-            </md-radio-group>
-       <p> <md-input placeholder="Observações" style="width: 100%"></md-input> </p>
-       
+            <accordion-group>
+              <div  accordion-heading>
+                    Complete desciption of {{requirement.rq_id}}
+                    <i  class="pull-right glyphicon"
+                        [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+              </div>
+            
+                      <div *ngIf="selectedRequirement">
+                        <p><b>Problemas no Ensino de Programação:</b> {{selectedRequirement.rq_prog_prob}} </p>
+                        <p><b>Modalidade(s) de Origem:</b> {{selectedRequirement.rq_modality}} </p>
+                        <p><b>Modificações para M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
+                        <p><b>Tipo de Categoria:</b> {{selectedRequirement.rq_type_cat}} </p>
+                        <p><b>Teorias Educacionais Envolvidas:</b> {{selectedRequirement.rq_theories}} </p>
+                        <p><b>Subcategorias do Requisito:</b> {{selectedRequirement.rq_subcategory}} </p>            
+                        <p><b>Descrição:</b> {{selectedRequirement.rq_description}} </p>
+                        <p><b>Referência Cruzada (Requisitos):</b> {{selectedRequirement.rq_cross_reference}} </p>
+                        <p><b>Tipo de Variabilidade:</b> {{selectedRequirement.rq_variability}} </p>
+                        <button (click)="gotoDetail()">View Details</button>
+                      </div>
 
-
-
-
-
-
+            </accordion-group>
         </div>
-
-<div>
-  <button md-raised-button (click)="openDialog(requirement)">Open Dialog</button>
-  <p>Result from dialog: {{ result }}</p>
-</div>
-
-<accordion [closeOthers]="oneAtATime">
-  <accordion-group heading="Static Header, initially expanded"
-                   [isOpen]="status.isFirstOpen"
-                   [isDisabled]="status.isFirstDisabled">
-    This content is straight in the template.
-  </accordion-group>
-  <accordion-group heading="Dynamic Body Content">
-    <p>The body of the accordion group grows to fit the contents</p>
-  </accordion-group>
-  <accordion-group #group [isOpen]="status.open">
-    <div accordion-heading>
-      I can have markup, too!
-      <i class="pull-right glyphicon"
-         [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
-    </div>
-    This is just some content to illustrate fancy headings.
-  </accordion-group>
-</accordion>
 
 
       </md-list-item>   
+      </accordion>
 
-
-
-          <div *ngIf="selectedRequirement">
-            <p>prog_prob: {{selectedRequirement.rq_prog_prob}} </p>
-            <p>modality: {{selectedRequirement.rq_modality}} </p>
-            <p>ml_type: {{selectedRequirement.rq_ml_type}} </p>
-            <p>ml_modification: {{selectedRequirement.rq_ml_modification}} </p>
-            <p>type_cat: {{selectedRequirement.rq_type_cat}} </p>
-            <p>theories: {{selectedRequirement.rq_theories}} </p>
-            <p>subcategory: {{selectedRequirement.rq_subcategory}} </p>            
-            <p>description: {{selectedRequirement.rq_description}} </p>
-            <p>cross_referencue: {{selectedRequirement.rq_cross_reference}} </p>
-            <p>variability: {{selectedRequirement.rq_variability}} </p>
-      <button (click)="gotoDetail()">View Details</button>
-      </div>
     </div>      
 
-     
-
+  

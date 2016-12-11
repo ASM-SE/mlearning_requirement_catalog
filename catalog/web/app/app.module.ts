@@ -11,12 +11,12 @@ import { SharedSettingsService } from './services/shared-settings.service'; //Co
 import { RequirementService } from './requirements/requirement.service';    //Sevico - antigo controller (angularJS)
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
-//Angular Material
+//Angular Material 2
 import { MaterialModule } from '@angular/material';
 
 //User Modules
-import { DialogsModule } from './modules/dialogs.module';//Testing Dialog with Angular 1 Material
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap'; //Testing bootstrap
+import { DialogsModule } from './modules/dialogs.module';           //Testing Dialog with Angular 1 Material
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';   //BootstrapNG
 
 //importar o list
 import './rxjs-extensions';
@@ -24,12 +24,12 @@ import './rxjs-extensions';
 @NgModule({
   imports:      [ 
       BrowserModule,
+      Ng2BootstrapModule,
       MaterialModule.forRoot(),
       FormsModule,
       HttpModule,
       AppRoutingModule,
-      DialogsModule,
-      Ng2BootstrapModule
+      DialogsModule
       ],
   declarations: [ 
       AppComponent,
