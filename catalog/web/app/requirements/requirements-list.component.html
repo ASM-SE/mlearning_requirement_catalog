@@ -32,22 +32,41 @@
   <p>Result from dialog: {{ result }}</p>
 </div>
 
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group heading="Static Header, initially expanded"
+                   [isOpen]="status.isFirstOpen"
+                   [isDisabled]="status.isFirstDisabled">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Dynamic Body Content">
+    <p>The body of the accordion group grows to fit the contents</p>
+  </accordion-group>
+  <accordion-group #group [isOpen]="status.open">
+    <div accordion-heading>
+      I can have markup, too!
+      <i class="pull-right glyphicon"
+         [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+    </div>
+    This is just some content to illustrate fancy headings.
+  </accordion-group>
+</accordion>
+
 
       </md-list-item>   
 
 
 
           <div *ngIf="selectedRequirement">
-            <p>prog_prob: {{requirement.rq_prog_prob}} </p>
-            <p>modality: {{requirement.rq_modality}} </p>
-            <p>ml_type: {{requirement.rq_ml_type}} </p>
-            <p>ml_modification: {{requirement.rq_ml_modification}} </p>
-            <p>type_cat: {{requirement.rq_type_cat}} </p>
-            <p>theories: {{requirement.rq_theories}} </p>
-            <p>subcategory: {{requirement.rq_subcategory}} </p>            
-            <p>description: {{requirement.rq_description}} </p>
-            <p>cross_referencue: {{requirement.rq_cross_reference}} </p>
-            <p>variability: {{requirement.rq_variability}} </p>
+            <p>prog_prob: {{selectedRequirement.rq_prog_prob}} </p>
+            <p>modality: {{selectedRequirement.rq_modality}} </p>
+            <p>ml_type: {{selectedRequirement.rq_ml_type}} </p>
+            <p>ml_modification: {{selectedRequirement.rq_ml_modification}} </p>
+            <p>type_cat: {{selectedRequirement.rq_type_cat}} </p>
+            <p>theories: {{selectedRequirement.rq_theories}} </p>
+            <p>subcategory: {{selectedRequirement.rq_subcategory}} </p>            
+            <p>description: {{selectedRequirement.rq_description}} </p>
+            <p>cross_referencue: {{selectedRequirement.rq_cross_reference}} </p>
+            <p>variability: {{selectedRequirement.rq_variability}} </p>
       <button (click)="gotoDetail()">View Details</button>
       </div>
     </div>      

@@ -16,8 +16,7 @@ import { MaterialModule } from '@angular/material';
 
 //User Modules
 import { DialogsModule } from './modules/dialogs.module';//Testing Dialog with Angular 1 Material
-
-import {MenubarModule, ToolbarModule} from 'primeng/primeng';
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap'; //Testing bootstrap
 
 //importar o list
 import './rxjs-extensions';
@@ -30,8 +29,7 @@ import './rxjs-extensions';
       HttpModule,
       AppRoutingModule,
       DialogsModule,
-      ToolbarModule,
-      MenubarModule
+      Ng2BootstrapModule
       ],
   declarations: [ 
       AppComponent,

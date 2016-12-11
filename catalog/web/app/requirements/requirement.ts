@@ -1,6 +1,6 @@
 export class Requirement {
 
-	_id: string;
+
 	rq_id: string;
 	rq_prod_prob: string;
 	rq_prog_prob: string;

@@ -30,7 +30,11 @@
       '@angular/material': 'npm:@angular/material/material.umd.js',
 
       //Trying PrimeNG
-      'primeng':                   'npm:primeng'      
+      'primeng':                   'npm:primeng',  
+
+      //Trying BootstrapNG
+      'moment': 'node_modules/moment/moment.js',
+      'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',    
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

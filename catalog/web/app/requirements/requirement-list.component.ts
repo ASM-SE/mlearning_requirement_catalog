@@ -6,6 +6,8 @@ import {DialogsService} from '../services/dialogs.service';
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
 
+import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
+
 @Component({
     moduleId: module.id,
     selector: 'requirements-list',
@@ -53,13 +55,13 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
     }
   }
 
-
+/*
   openDialog(requirement) {
     this.dialogsService
       .confirm('Confirm Dialog', requirement.rq_requirement, this.viewContainerRef)
       .subscribe(res => this.result = res);
   }
-
+*/
 
 
 }
