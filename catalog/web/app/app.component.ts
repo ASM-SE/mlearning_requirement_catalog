@@ -1,58 +1,55 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, OnInit } from '@angular/core';
+import {MenubarModule,MenuItem} from 'primeng/primeng';
 
 
 
 @Component({
   selector: 'my-app',
   template: ` 
- <md-sidenav-layout  fullscreen> <!--Ddeve ser fechado até onde o sidenav deve sobrepor-->
-      
-        <md-sidenav #left mode="over" layout-padding>
 
-        <md-toolbar color="primary">
+<p-menubar [model]="items"></p-menubar>
 
-              
-            <h2>Menu</h2>
-        
-        </md-toolbar>        
-
-<md-nav-list> 
-<a md-list-item md-ink-ripple="#333333" routerLink="/requirement" routerLinkActive="active" (click)="left.toggle()">
- <md-icon md-list-icon>palette</md-icon>
-  <span md-line>Requirement</span> </a> 
-    </md-nav-list>           
-
-         <a routerLink="/requirement" routerLinkActive="active">Requirement</a>
-
-        </md-sidenav>
-
-        <md-toolbar color="primary">
-
-              <button md-icon-button class="app-icon-button" (click)="left.toggle()">
-                <md-icon>menu</md-icon>
-              </button>
-
-            Toolbar with Icon Buttons
-        
-        </md-toolbar>
-
-
-
-
-        <div class="app-content">
+  <div class="app-content">
                     <router-outlet></router-outlet>
         </div>
     
-    </md-sidenav-layout>
 
 
     `,
   styleUrls: ['/app.component.css']
 
 })
-export class AppComponent  { 
+export class AppComponent  implements OnInit { 
   title = 'M-learning Requirement Catalog'; 
 
+ private items: MenuItem[];
+
+    ngOnInit() {
+        this.items = [
+            {
+                label: 'File',
+                items: [{
+                        label: 'New', 
+                        icon: 'fa-plus',
+                        items: [
+                            {label: 'Project'},
+                            {label: 'Other'},
+                        ]
+                    },
+                    {label: 'Open'},
+                    {label: 'Quit'}
+                ]
+            },
+            {
+                label: 'Edit',
+                icon: 'fa-edit',
+                items: [
+                    {label: 'Undo', icon: 'fa-mail-forward'},
+                    {label: 'Redo', icon: 'fa-mail-reply'}
+                ]
+            }
+        ];
+    }
 
 }
 

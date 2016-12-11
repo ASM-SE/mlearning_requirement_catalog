@@ -15,8 +15,9 @@ import { RequirementsListComponent } from './requirements/requirement-list.compo
 import { MaterialModule } from '@angular/material';
 
 //User Modules
-import { DialogsModule } from './modules/dialogs.module';
+import { DialogsModule } from './modules/dialogs.module';//Testing Dialog with Angular 1 Material
 
+import {MenubarModule, ToolbarModule} from 'primeng/primeng';
 
 //importar o list
 import './rxjs-extensions';
@@ -28,7 +29,9 @@ import './rxjs-extensions';
       FormsModule,
       HttpModule,
       AppRoutingModule,
-      DialogsModule
+      DialogsModule,
+      ToolbarModule,
+      MenubarModule
       ],
   declarations: [ 
       AppComponent,
