@@ -27,12 +27,12 @@
                         <p><b>Modificações para M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Tipo de Categoria:</b> {{selectedRequirement.rq_type_cat}} </p>
                         <p><b>Teorias Educacionais Envolvidas:</b>
-                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last" (click)="gotoDetail()">{{theory}}{{isLast ? '' : ', '}}</a></p>
+                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last" (click)="gotoDetail(theory)">{{theory}}{{isLast ? '' : ', '}}</a></p>
                         <p><b>Subcategorias do Requisito:</b> {{selectedRequirement.rq_subcategory}} </p>            
                         <p><b>Descrição:</b> {{selectedRequirement.rq_description}} </p>
                         <p><b>Referência Cruzada (Requisitos):</b> {{selectedRequirement.rq_cross_reference}} </p>
                         <p><b>Tipo de Variabilidade:</b> {{selectedRequirement.rq_variability}} </p>
-                        <button (click)="gotoDetail()">View Details</button>
+                        <button (click)="gotoDetail(selectedRequirement)">View Details</button>
                       </div>
 
             </accordion-group>

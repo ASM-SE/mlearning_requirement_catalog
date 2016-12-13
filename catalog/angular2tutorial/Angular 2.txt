@@ -2,6 +2,8 @@ https://github.com/timjacobi/angular2-education
 
 https://justindujardin.github.io/ng2-material/
 
+https://justindujardin.github.io/ng2-material/#/components/button
+
 Style Guide 
 https://angular.io/docs/ts/latest/guide/style-guide.html
 

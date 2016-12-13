@@ -6,8 +6,8 @@ import {DialogsService} from '../services/dialogs.service';
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
 
-//import { Theory } from '../theories/theories';
-//import { TheoryService } from '../theories/theory.service';
+import { Theory } from '../theories/theory';
+import { TheoryService } from '../theories/theory.service';
 
 import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -20,10 +20,12 @@ import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
 export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
     public oneAtATime:boolean = true;  //Accordion property
     requirementsx: Requirement[] = [];
+    theoriesx: Theory;
     selectedRequirement: Requirement;
     result: any;
     data: any = {default: 'Banana'};
     constructor(private reqSvc : RequirementService, 
+                private trySvc : TheoryService,
                 private router : Router,
                 private dialogsService: DialogsService, 
                 private viewContainerRef: ViewContainerRef) {}
@@ -37,10 +39,12 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
         this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
     }
 
-    gotoDetail(requirement: Requirement): void {
+    gotoDetail(rq_theories): void {
+      console.log(rq_theories);
      /* this.router.navigate(['/detail', this.selectedRequirement._id]);*/
-          this.selectedRequirement = requirement;
-      console.log(this.selectedRequirement);
+          //this.selectedRequirement = requirement;
+          this.trySvc.getTheoriesbyIds(rq_theories).subscribe(res => { this.theoriesx = res });
+          this.openDialog(this.theoriesx);
     }  
 
   status: string = '';
@@ -52,13 +56,14 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
     }
   }
 
-/*
-  openDialog(requirement) {
+
+  openDialog(param: Theory) {
+    console.log(param.et_id);
     this.dialogsService
-      .confirm('Confirm Dialog', requirement.rq_requirement, this.viewContainerRef)
+      .confirm('Confirm Dialog', param.et_description, this.viewContainerRef)
       .subscribe(res => this.result = res);
   }
-*/
+
 
 
 }

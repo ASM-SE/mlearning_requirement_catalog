@@ -11,6 +11,8 @@ import { SharedSettingsService } from './services/shared-settings.service'; //Co
 import { RequirementService } from './requirements/requirement.service';    //Sevico - antigo controller (angularJS)
 import { RequirementsListComponent } from './requirements/requirement-list.component';
 
+import { TheoryService } from './theories/theory.service';
+
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
 
@@ -37,7 +39,8 @@ import './rxjs-extensions';
       ],
   providers:    [
       SharedSettingsService,
-      RequirementService
+      RequirementService,
+      TheoryService
       ],
   bootstrap:    [ 
       AppComponent 

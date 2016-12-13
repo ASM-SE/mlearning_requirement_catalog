@@ -8,10 +8,12 @@ const PER_PAGE  = 10;
 let TheoryController = {
 
 getTheoriesbyIds: (request, response, next) => {
-  var ids = request.params.et_ids.split(',');
+ // var ids = request.params.et_ids.split(',');
+  var ids = requires.params.rq_theories;
   console.log(ids);
-  let _query = {'et_id':{'$in':ids}};
-  repository.find(_query)
+ // let _query = {'et_id':{'$in':ids}};
+   let _query = {'et_id':{ids}};
+  repository.findOne(_query)
     .then((result) =>{
       if (!result) {
         let err = new Error('Theories not found.');
