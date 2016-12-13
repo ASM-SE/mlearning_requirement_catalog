@@ -6,6 +6,9 @@ import {DialogsService} from '../services/dialogs.service';
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
 
+//import { Theory } from '../theories/theories';
+//import { TheoryService } from '../theories/theory.service';
+
 import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
@@ -15,29 +18,28 @@ import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
     styleUrls: ['requirement-list.component.css'],  
 })
 export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
-  public oneAtATime:boolean = true;
+    public oneAtATime:boolean = true;  //Accordion property
     requirementsx: Requirement[] = [];
     selectedRequirement: Requirement;
     result: any;
-
-         data: any = {default: 'Banana'};
+    data: any = {default: 'Banana'};
     constructor(private reqSvc : RequirementService, 
                 private router : Router,
                 private dialogsService: DialogsService, 
-                private viewContainerRef: ViewContainerRef) { }
+                private viewContainerRef: ViewContainerRef) { 
+   
+
+                }
 
     onSelect(requirement: Requirement): void {
       this.selectedRequirement = requirement;
     }    
 
-  /*  getRequirements() : void {
-        this.reqSvc.getRequirements().then(requirements => this.requirements = requirements);
-    }*/
-
- 
 
     ngOnInit(): void {  //Idem ao init-form
         this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
+       
+        //this.etsSvc.getTheoriesbyIds(requirementsx.rq_theories);
     }
 
     gotoDetail(requirement: Requirement): void {

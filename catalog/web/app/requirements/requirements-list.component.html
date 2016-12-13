@@ -9,6 +9,9 @@
         <div class="md-list-item-text rq_list">
             <h3>{{requirement.rq_id}}</h3>    
             <p><b>Requirement: </b> {{requirement.rq_requirement}} </p>
+
+         
+
             
             <accordion-group>
               <div  accordion-heading>
@@ -22,7 +25,10 @@
                         <p><b>Modalidade(s) de Origem:</b> {{selectedRequirement.rq_modality}} </p>
                         <p><b>Modificações para M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Tipo de Categoria:</b> {{selectedRequirement.rq_type_cat}} </p>
-                        <p><b>Teorias Educacionais Envolvidas:</b> {{selectedRequirement.rq_theories}} </p>
+                      <b>Teorias Educacionais Envolvidas:</b>  
+                        <button md-button layout-padding layout="row"  layout-align="start end"  *ngFor="let theory of requirement.rq_theories" (click)="gotoDetail()" class="md-raised">{{theory}}</button>
+                        <a *ngFor="let theory of requirement.rq_theories" href="http://www.w3schools.com">{{theory}}</a>
+              
                         <p><b>Subcategorias do Requisito:</b> {{selectedRequirement.rq_subcategory}} </p>            
                         <p><b>Descrição:</b> {{selectedRequirement.rq_description}} </p>
                         <p><b>Referência Cruzada (Requisitos):</b> {{selectedRequirement.rq_cross_reference}} </p>
