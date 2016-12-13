@@ -26,10 +26,7 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
     constructor(private reqSvc : RequirementService, 
                 private router : Router,
                 private dialogsService: DialogsService, 
-                private viewContainerRef: ViewContainerRef) { 
-   
-
-                }
+                private viewContainerRef: ViewContainerRef) {}
 
     onSelect(requirement: Requirement): void {
       this.selectedRequirement = requirement;
@@ -38,8 +35,6 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
 
     ngOnInit(): void {  //Idem ao init-form
         this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
-       
-        //this.etsSvc.getTheoriesbyIds(requirementsx.rq_theories);
     }
 
     gotoDetail(requirement: Requirement): void {

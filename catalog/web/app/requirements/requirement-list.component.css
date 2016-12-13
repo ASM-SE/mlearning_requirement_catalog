@@ -1,9 +1,16 @@
 .rq_list{
-
       padding: 5px;
-
 }
 
-.accordion-heading{
-      text-decoration: none;
+
+.list_modal{
+      cursor: pointer;
+}
+
+.even { 
+      background-color: rgb(230,230,230); 
+}
+
+.odd { 
+      background-color: white; 
 }
