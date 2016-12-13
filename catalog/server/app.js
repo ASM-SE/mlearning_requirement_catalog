@@ -10,7 +10,7 @@ const compression 	= require('compression'); //??
 const cors 			= require('cors');
 const debug       	= require('debug')('requirement:app');
 const AppController = require('./controller/AppController');
-const app 			    = express();
+const app 			= express();
 /* 
 app.set('views', path.join(__dirname, 'views'));		//?
 app.set('view engine', 'ejs');							//?

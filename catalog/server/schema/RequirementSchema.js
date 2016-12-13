@@ -4,7 +4,7 @@ let mongoose            = require('../config/MongooseConfig');
 
 let RequirementSchema = mongoose.Schema({
 	rq_id: {type: String, trim: true, required: true, maxlength: 7},
-	rq_prod_prob: {type: Array, trim: true},
+	rq_prog_prob: {type: Array, trim: true},
 	rq_modality: {type: String, required: true},
 	rq_ml_type: {type: String, required: true},
 	rq_ml_modification: { type: String, required: true},
