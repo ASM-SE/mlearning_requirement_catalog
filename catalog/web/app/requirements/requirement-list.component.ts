@@ -43,8 +43,10 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
       console.log(rq_theories);
      /* this.router.navigate(['/detail', this.selectedRequirement._id]);*/
           //this.selectedRequirement = requirement;
-          this.trySvc.getTheoriesbyIds(rq_theories).subscribe(res => { this.theoriesx = res });
-          this.openDialog(this.theoriesx);
+         this.trySvc.getTheoriesbyIds(rq_theories).subscribe(res => { this.theoriesx = res });
+         // console.log(this.theoriesx.getString("et_id"))
+          this.openDialog(this.theoriesx.et_description);
+
     }  
 
   status: string = '';
@@ -57,10 +59,10 @@ export class RequirementsListComponent implements OnInit {  //Removi implements 
   }
 
 
-  openDialog(param: Theory) {
-    console.log(param.et_id);
+  openDialog(param: string) {
+    console.log(param);
     this.dialogsService
-      .confirm('Confirm Dialog', param.et_description, this.viewContainerRef)
+      .confirm('Confirm Dialog', param, this.viewContainerRef)
       .subscribe(res => this.result = res);
   }
 
