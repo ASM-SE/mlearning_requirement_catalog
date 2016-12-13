@@ -7,12 +7,32 @@ const PER_PAGE  = 10;
 
 let TheoryController = {
 
+getTheoriesbyIds: (request, response, next) => {
+  var ids = request.params.et_ids.split(',');
+  console.log(ids);
+  let _query = {'et_id':{'$in':ids}};
+  repository.find(_query)
+    .then((result) =>{
+      if (!result) {
+        let err = new Error('Theories not found.');
+        err.status = 500;
+        throw err;
+      }
+      return result;
+    })
+    .then(function(result) {
+      response.json(result);
+    })
+    .catch(next);
+  },
+
+
  getTheories: (request, response, next) =>{
     // let query = {rq_id::/^RNF/}; //Contenha RNF
     //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
-  let query = {};
-  let fields = {};
-  repository.find(query, fields)
+  let _query = {};
+  let _fields = {};
+  repository.find(_query, _fields)
     .then((result) =>{
       if (!result) {
         let err = new Error('Theories not found.');
