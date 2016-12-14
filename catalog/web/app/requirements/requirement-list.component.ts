@@ -1,16 +1,12 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {DialogsService} from '../services/dialogs.service';
-
 import { Requirement } from './requirement';
 import { RequirementService } from './requirement.service';
 
 import { Theory } from '../theories/theory';
 import { TheoryService } from '../theories/theory.service';
 
-import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
-import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
@@ -30,7 +26,6 @@ export class RequirementsListComponent implements OnInit {
                 private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
                 private router : Router,
-                private dialogsService: DialogsService,
                 private componentsHelper: ComponentsHelper
                 ) {
 
@@ -52,7 +47,7 @@ export class RequirementsListComponent implements OnInit {
           //this.selectedRequirement = requirement;
          this.trySvc.getTheoriesbyIds(rq_theories).subscribe(res => { this.theoriesx = res });
          // console.log(this.theoriesx.getString("et_id"))
-          this.openDialog(this.theoriesx.et_description);
+          
 
     }  
 
@@ -66,14 +61,7 @@ export class RequirementsListComponent implements OnInit {
   }
 
 
-  openDialog(param: string) {
-    console.log(param);
-    this.dialogsService
-      .confirm('Confirm Dialog', param, this.viewContainerRef)
-      .subscribe(res => this.result = res);
-  }
-
-
+ 
 
 }
 

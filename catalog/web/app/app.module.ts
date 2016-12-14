@@ -17,7 +17,6 @@ import { TheoryService } from './theories/theory.service';
 import { MaterialModule } from '@angular/material';
 
 //User Modules
-import { DialogsModule } from './modules/dialogs.module';           //Testing Dialog with Angular 1 Material
 import { SharedModule } from './modules/shared.module';             //BootstrapNG
 
 //importar o list
@@ -30,8 +29,7 @@ import './rxjs-extensions';
       MaterialModule.forRoot(),
       FormsModule,
       HttpModule,
-      AppRoutingModule,
-      DialogsModule
+      AppRoutingModule
       ],
   declarations: [ 
       AppComponent,
