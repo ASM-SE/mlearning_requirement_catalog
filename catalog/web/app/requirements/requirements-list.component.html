@@ -27,7 +27,7 @@
                         <p><b>Modificações para M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Tipo de Categoria:</b> {{selectedRequirement.rq_type_cat}} </p>
                         <p><b>Teorias Educacionais Envolvidas:</b>
-                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="lgModal.show()">{{theory}}{{isLast ? '' : ', '}}</a></p>
+                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="onClick(theory,lgModal)">{{theory}}{{isLast ? '' : ', '}}</a></p>
                         <p><b>Subcategorias do Requisito:</b> {{selectedRequirement.rq_subcategory}} </p>            
                         <p><b>Descrição:</b> {{selectedRequirement.rq_description}} </p>
                         <p><b>Referência Cruzada (Requisitos):</b> {{selectedRequirement.rq_cross_reference}} </p>
@@ -51,10 +51,19 @@
         <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Large modal</h4>
+        <h4 class="modal-title">{{title}}</h4>
       </div>
       <div class="modal-body">
-        ...
+      <p><b>Theory Id: </b>{{theoriesx.et_id}}</p>
+      <p><b>Type: </b>{{theoriesx.et_type}}</p>
+      <p><b>Name: </b>{{theoriesx.et_name}}</p>
+      <p><b>Acroym: </b>{{theoriesx.et_acronym}}</p>
+      <p><b>Description: </b>{{theoriesx.et_description}}</p>
+      <p><b>Theoretician(s): </b>{{theoriesx.et_theoretician}}</p>
+      <p><b>Year of Creation: </b>{{theoriesx.et_year}}</p>
+      <p><b>Related Theory(ies): </b>{{theoriesx.et_relationship}}</p>
+      <p><b>Reference: </b>{{theoriesx.et_bibliography}}</p>                                                
+    
       </div>
     </div>
   </div>

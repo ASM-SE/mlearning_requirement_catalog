@@ -9,6 +9,8 @@ import { TheoryService } from '../theories/theory.service';
 
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
+import {Observable} from "RxJS/Rx";
+
 @Component({
     moduleId: module.id,
     selector: 'requirements-list',
@@ -18,10 +20,10 @@ import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 export class RequirementsListComponent implements OnInit {  
     public oneAtATime:boolean = true;  //Accordion property
     requirementsx: Requirement[] = [];
-    theoriesx: Theory;
+    theoriesx: Theory[] = [];
     selectedRequirement: Requirement;
     result: any;
-    data: any = {default: 'Banana'};
+    title: any;
     constructor(private viewContainerRef: ViewContainerRef,
                 private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
@@ -50,6 +52,24 @@ export class RequirementsListComponent implements OnInit {
           
 
     }  
+
+
+
+
+//public selecteditem: Observable<Theory>;
+
+ onClick(et_id: Theory, lgModal:any){
+    console.log(et_id);
+    this.trySvc.getTheoriesbyIds(et_id).subscribe(res => { this.theoriesx = res });
+    this.title = "Educational Theory";
+    lgModal.show()
+
+   // console.log(this.selecteditem); // print in console
+
+ }
+
+
+
 
   status: string = '';
   customClose(interesting: boolean) {
