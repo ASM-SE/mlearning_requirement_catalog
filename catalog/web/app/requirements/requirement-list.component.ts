@@ -23,7 +23,8 @@ export class RequirementsListComponent implements OnInit {
     theoriesx: Theory[] = [];
     selectedRequirement: Requirement;
     result: any;
-    title: any;
+    title: any; //Modal title
+    status: string = ''; //Acordion Bootstrap status
     constructor(private viewContainerRef: ViewContainerRef,
                 private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
@@ -43,68 +44,18 @@ export class RequirementsListComponent implements OnInit {
         this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
     }
 
-    gotoDetail(rq_theories): void {
-      console.log(rq_theories);
-     /* this.router.navigate(['/detail', this.selectedRequirement._id]);*/
-          //this.selectedRequirement = requirement;
-         this.trySvc.getTheoriesbyIds(rq_theories).subscribe(res => { this.theoriesx = res });
-         // console.log(this.theoriesx.getString("et_id"))
-          
-
-    }  
 
 
+    //Modal function with parameters
+    onClick(et_id: Theory, lgModal:any){
+        console.log(et_id);
+        this.trySvc.getTheoriesbyIds(et_id).subscribe(res => { this.theoriesx = res });
+        this.title = "Educational Theory";
+        lgModal.show()
 
-
-//public selecteditem: Observable<Theory>;
-
- onClick(et_id: Theory, lgModal:any){
-    console.log(et_id);
-    this.trySvc.getTheoriesbyIds(et_id).subscribe(res => { this.theoriesx = res });
-    this.title = "Educational Theory";
-    lgModal.show()
-
-   // console.log(this.selecteditem); // print in console
-
- }
-
-
-
-
-  status: string = '';
-  customClose(interesting: boolean) {
-    if (interesting) {
-      this.status = 'That article was interesting.';
-    } else {
-      this.status = 'Look for something else.';
     }
-  }
 
- 
 
 }
 
 
-
-
-/*
-
-  <button (click)="gotoDetail(requirement)">View Details</button>
-  <p>Selected Value: <span class="radioValue">{{data.default}}</span></p>
-  <md-radio-group  [(ngModel)]="data.default" [ngModelOptions]="{standalone: false}">
-              <md-radio-button value="1" class="md-primary" >1</md-radio-button>
-              <md-radio-button value="2" class="md-primary">2</md-radio-button>
-              <md-radio-button value="3" class="md-primary">3</md-radio-button>
-              <md-radio-button value="4" class="md-primary">4</md-radio-button>
-              <md-radio-button value="5" class="md-primary">5</md-radio-button>
-            
-            </md-radio-group>
-       <p> <md-input placeholder="Observações" style="width: 100%"></md-input> </p>
-
-        </div>
-
-<div>
-  <button md-raised-button (click)="openDialog(requirement)">Open Dialog</button>
-  <p>Result from dialog: {{ result }}</p>
-</div>
-*/
