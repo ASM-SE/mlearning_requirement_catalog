@@ -10,6 +10,8 @@ import { Theory } from '../theories/theory';
 import { TheoryService } from '../theories/theory.service';
 
 import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
     moduleId: module.id,
@@ -17,18 +19,23 @@ import {AccordionModule} from 'ng2-bootstrap/ng2-bootstrap';
     templateUrl: 'requirements-list.component.html',
     styleUrls: ['requirement-list.component.css'],  
 })
-export class RequirementsListComponent implements OnInit {  //Removi implements OnInit
+export class RequirementsListComponent implements OnInit {  
     public oneAtATime:boolean = true;  //Accordion property
     requirementsx: Requirement[] = [];
     theoriesx: Theory;
     selectedRequirement: Requirement;
     result: any;
     data: any = {default: 'Banana'};
-    constructor(private reqSvc : RequirementService, 
+    constructor(private viewContainerRef: ViewContainerRef,
+                private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
                 private router : Router,
-                private dialogsService: DialogsService, 
-                private viewContainerRef: ViewContainerRef) {}
+                private dialogsService: DialogsService,
+                private componentsHelper: ComponentsHelper
+                ) {
+
+                        componentsHelper.setRootViewContainerRef(viewContainerRef); //ModalComponent do Bootstrap só funciona com isso!!
+                }
 
     onSelect(requirement: Requirement): void {
       this.selectedRequirement = requirement;

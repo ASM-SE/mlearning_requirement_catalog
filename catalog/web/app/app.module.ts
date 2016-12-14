@@ -18,7 +18,7 @@ import { MaterialModule } from '@angular/material';
 
 //User Modules
 import { DialogsModule } from './modules/dialogs.module';           //Testing Dialog with Angular 1 Material
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';   //BootstrapNG
+import { SharedModule } from './modules/shared.module';             //BootstrapNG
 
 //importar o list
 import './rxjs-extensions';
@@ -26,7 +26,7 @@ import './rxjs-extensions';
 @NgModule({
   imports:      [ 
       BrowserModule,
-      Ng2BootstrapModule,
+      SharedModule,
       MaterialModule.forRoot(),
       FormsModule,
       HttpModule,

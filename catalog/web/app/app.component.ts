@@ -1,5 +1,4 @@
-import { Component, ViewContainerRef, OnInit } from '@angular/core';
-
+import { Component,OnInit } from '@angular/core';
 
 
 
@@ -53,7 +52,6 @@ import { Component, ViewContainerRef, OnInit } from '@angular/core';
 })
 export class AppComponent  { 
   title = 'M-learning Requirement Catalog'; 
-
 
 }
 

@@ -27,7 +27,7 @@
                         <p><b>Modificações para M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Tipo de Categoria:</b> {{selectedRequirement.rq_type_cat}} </p>
                         <p><b>Teorias Educacionais Envolvidas:</b>
-                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last" (click)="gotoDetail(theory)">{{theory}}{{isLast ? '' : ', '}}</a></p>
+                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="lgModal.show()">{{theory}}{{isLast ? '' : ', '}}</a></p>
                         <p><b>Subcategorias do Requisito:</b> {{selectedRequirement.rq_subcategory}} </p>            
                         <p><b>Descrição:</b> {{selectedRequirement.rq_description}} </p>
                         <p><b>Referência Cruzada (Requisitos):</b> {{selectedRequirement.rq_cross_reference}} </p>
@@ -41,6 +41,24 @@
 
       </md-list-item>   
       </accordion>
+
+
+
+    <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Large modal</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>      
 
