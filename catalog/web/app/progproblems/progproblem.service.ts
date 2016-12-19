@@ -6,22 +6,22 @@ import 'rxjs/Rx';
 import {Observable} from "RxJS/Rx";
 
 import { SharedSettingsService } from '../services/shared-settings.service';
-import { Theory } from './theory';
+import { ProgProblem } from './progproblem';
 
 @Injectable()
-export class TheoryService {
+export class ProgProblemService {
     
     constructor(private http: Http, private api: SharedSettingsService){
     }
     
-    getTheories() {
+    getProgProblems() {
         return this.http.get(this.api.theories)
             .map(res => res.json());
     }
 
 
-    getTheoriesbyIds(theories) {
-        return this.http.get(this.api.theories + "/ets/" + theories)
+    getProgProblemsbyIds(problems) {
+        return this.http.get(this.api.theories + "/ppr/" + problems)
             .map(res => res.json());
     }    
 
