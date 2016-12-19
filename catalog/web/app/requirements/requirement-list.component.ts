@@ -7,6 +7,9 @@ import { RequirementService } from './requirement.service';
 import { Theory } from '../theories/theory';
 import { TheoryService } from '../theories/theory.service';
 
+import { ProgProblem } from '../progproblems/progproblem';
+import { ProgProblemService } from '../progproblems/progproblem.service';
+
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
 import {Observable} from "RxJS/Rx";
@@ -21,6 +24,7 @@ export class RequirementsListComponent implements OnInit {
     public oneAtATime:boolean = true;  //Accordion property
     requirementsx: Requirement[] = [];
     theoriesx: Theory[] = [];
+    progproblmesx: ProgProblem[] = [];
     selectedRequirement: Requirement;
     result: any;
     title: any; //Modal title
@@ -28,6 +32,7 @@ export class RequirementsListComponent implements OnInit {
     constructor(private viewContainerRef: ViewContainerRef,
                 private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
+                private ppgSvc : ProgProblemService,
                 private router : Router,
                 private componentsHelper: ComponentsHelper
                 ) {
@@ -47,13 +52,22 @@ export class RequirementsListComponent implements OnInit {
 
 
     //Modal function with parameters
-    onClick(et_id: Theory, lgModal:any){
+    onClickTheory(et_id: Theory, TheoryModal:any){
         console.log(et_id);
         this.trySvc.getTheoriesbyIds(et_id).subscribe(res => { this.theoriesx = res });
         this.title = "Educational Theory";
-        lgModal.show()
+        TheoryModal.show()
 
     }
+
+    //Modal function with parameters
+    onClickProgProblem(pg_id: ProgProblem, ProgProblemModal:any){
+        console.log(pg_id);
+        this.ppgSvc.getProgProblemsbyIds(pg_id).subscribe(res => { this.progproblmesx = res });
+        this.title = "Programming Problem";
+        ProgProblemModal.show()
+
+    }    
 
 
 }

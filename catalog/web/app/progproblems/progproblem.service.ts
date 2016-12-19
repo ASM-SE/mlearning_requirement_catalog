@@ -15,13 +15,13 @@ export class ProgProblemService {
     }
     
     getProgProblems() {
-        return this.http.get(this.api.theories)
+        return this.http.get(this.api.progproblems)
             .map(res => res.json());
     }
 
 
     getProgProblemsbyIds(problems) {
-        return this.http.get(this.api.theories + "/ppr/" + problems)
+        return this.http.get(this.api.progproblems + "/ppr/" + problems)
             .map(res => res.json());
     }    
 

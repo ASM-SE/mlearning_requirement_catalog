@@ -7,5 +7,6 @@ export class SharedSettingsService {
 
     baseApiPath: string = "http://localhost:5500/api";
     requirements: string = this.baseApiPath + "/requirements";     //requirement api        
-    theories: string = this.baseApiPath + "/theories";              //theory api     
+    theories: string = this.baseApiPath + "/theories";              //theory api  
+    progproblems: string = this.baseApiPath + "/progproblems";              //theory api          
 }

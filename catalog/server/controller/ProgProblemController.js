@@ -8,7 +8,7 @@ const PER_PAGE  = 10;
 let TheoryController = {
 
 getProgProblemsbyIds: (request, response, next) => {
-  var ids = request.params.et_ids.split(',');
+  var ids = request.params.pg_ids.split(',');
   console.log(ids);
  let _query = {'pg_id':{'$in':ids}};
 
