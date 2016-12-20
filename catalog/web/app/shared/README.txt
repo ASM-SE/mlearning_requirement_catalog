@@ -1,0 +1,1 @@
+common components, directives and pipes that will be used throughout the application

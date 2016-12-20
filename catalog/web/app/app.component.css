@@ -71,3 +71,19 @@ md-sidenav-layout.m2app-dark {
 .app-progress {
   margin: 20px;
 }
+
+
+.wrapper{
+  display: flex;
+  flex-direction: column;            
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header{
+  position: fixed !important;
+    display: flex;
+  flex-direction: column;            
+  height: 100vh;
+  overflow: hidden;
+}

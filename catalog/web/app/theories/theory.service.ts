@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import {Observable} from "RxJS/Rx";
 
-import { SharedSettingsService } from '../shared/services/shared-settings.service';
+import { SharedSettingsService } from '../services/shared-settings.service';
 import { Theory } from './theory';
 
 @Injectable()

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 //User imports
 import { AppComponent }  from './app.component';
-import { SharedSettingsService } from './shared/services/shared-settings.service'; //Constants to access the end points from server(s)
+import { SharedSettingsService } from './services/shared-settings.service'; //Constants to access the end points from server(s)
 //import { ProgProblemService } from './progproblems/progproblem.service';
 //import { TheoryService } from './theories/theory.service';
 
@@ -15,7 +15,7 @@ import { SharedSettingsService } from './shared/services/shared-settings.service
 import { MaterialModule } from '@angular/material';
 
 //User Modules
-import { SharedModule } from './shared/modules/shared.module';             //BootstrapNG
+import { SharedModule } from './shared/shared.module';             //BootstrapNG
 import { RequirementsModule } from './requirements/requirements.module';
 
 //importar o list
@@ -38,7 +38,7 @@ import './shared/extensions/rxjs-extensions';
       SharedSettingsService,
      // TheoryService,
     //  ProgProblemService
-      ],  
+      ],
   bootstrap:    [ 
       AppComponent 
       ]

@@ -2,13 +2,13 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Requirement } from '../requirement';
-import { RequirementService } from '../requirement.service';
+import { RequirementService } from '../requirements.service';
 
 import { Theory } from '../../theories/theory';
 import { TheoryService } from '../../theories/theory.service';
 
 import { ProgProblem } from '../../progproblems/progproblem';
-import { ProgProblemService } from '../../progproblems/progproblem.service';
+import { ProgProblemsService } from '../../progproblems/progproblems.service';
 
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -32,7 +32,7 @@ export class RequirementsListComponent implements OnInit {
     constructor(private viewContainerRef: ViewContainerRef,
                 private reqSvc : RequirementService, 
                 private trySvc : TheoryService,
-                private ppgSvc : ProgProblemService,
+                private ppgSvc : ProgProblemsService,
                 private router : Router,
                 private componentsHelper: ComponentsHelper
                 ) {

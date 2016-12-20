@@ -6,16 +6,16 @@ import { HttpModule }    from '@angular/http';
 import { AppRoutingModule } from '../app-routing.module';
 
 //import { SharedSettingsService } from '../shared/services/shared-settings.service'; //Constants to access the end points from server(s)
-import { RequirementService } from './requirement.service';    //Sevico - antigo controller (angularJS)
+import { RequirementService } from './requirements.service';    //Sevico - antigo controller (angularJS)
 import { RequirementsListComponent } from './requirement-list/requirement-list.component';
-import { ProgProblemService } from '../progproblems/progproblem.service';
+import { ProgProblemsService } from '../progproblems/progproblems.service';
 import { TheoryService } from '../theories/theory.service';
 
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
 
 //User Modules
-import { SharedModule } from '../shared/modules/shared.module';             //BootstrapNG
+import { SharedModule } from '../shared/shared.module';             //BootstrapNG
 
 //importar o list
 import '../shared/extensions/rxjs-extensions';
@@ -36,10 +36,7 @@ import '../shared/extensions/rxjs-extensions';
     //  SharedSettingsService,
       RequirementService,
       TheoryService,
-      ProgProblemService
-      ],
-  exports: [
-      RequirementsListComponent
-      ]      
+      ProgProblemsService
+      ]     
 })
 export class RequirementsModule { }

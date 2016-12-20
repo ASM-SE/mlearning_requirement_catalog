@@ -5,11 +5,11 @@ import 'rxjs/Rx';
 
 import {Observable} from "RxJS/Rx";
 
-import { SharedSettingsService } from '../shared/services/shared-settings.service';
+import { SharedSettingsService } from '../services/shared-settings.service';
 import { ProgProblem } from './progproblem';
 
 @Injectable()
-export class ProgProblemService {
+export class ProgProblemsService {
     
     constructor(private http: Http, private api: SharedSettingsService){
     }
