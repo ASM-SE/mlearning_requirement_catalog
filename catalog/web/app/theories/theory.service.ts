@@ -20,7 +20,7 @@ export class TheoryService {
     }
 
 
-    getTheoriesbyIds(theories) {
+    getTheoriesbyIds(theories: Theory) {
         return this.http.get(this.api.theories + "/ets/" + theories)
             .map(res => res.json());
     }    

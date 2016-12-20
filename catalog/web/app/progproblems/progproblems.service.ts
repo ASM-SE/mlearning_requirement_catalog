@@ -20,7 +20,7 @@ export class ProgProblemsService {
     }
 
 
-    getProgProblemsbyIds(problems) {
+    getProgProblemsbyIds(problems: ProgProblem) {
         return this.http.get(this.api.progproblems + "/ppr/" + problems)
             .map(res => res.json());
     }    

@@ -3,8 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 //import 'rxjs/add/operator/switchMap';
 
-import { Requirement } from './requirement';
-import { RequirementService } from './requirement.service';
+import { Requirement } from '../requirement';
+import { RequirementService } from '../requirements.service';
 
 @Component({
   moduleId: module.id,

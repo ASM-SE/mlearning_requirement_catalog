@@ -45,6 +45,7 @@ export class RequirementsListComponent implements OnInit {
     }    
 
 
+
     ngOnInit(): void {  //Idem ao init-form
         this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
     }
