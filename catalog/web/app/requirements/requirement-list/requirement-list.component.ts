@@ -53,7 +53,7 @@ export class RequirementsListComponent implements OnInit {
 
 
     //Modal function with parameters
-    onClickTheory(et_id: Theory, TheoryModal:any){
+    clickTheory(et_id: Theory, TheoryModal:any){
         console.log(et_id);
         this.trySvc.getTheoriesbyIds(et_id).subscribe(res => { this.theoriesx = res });
         this.title = "Educational Theory";
@@ -62,7 +62,7 @@ export class RequirementsListComponent implements OnInit {
     }
 
     //Modal function with parameters
-    onClickProgProblem(pg_id: ProgProblem, ProgProblemModal:any){
+    clickProgProblem(pg_id: ProgProblem, ProgProblemModal:any){
         console.log(pg_id);
         this.ppgSvc.getProgProblemsbyIds(pg_id).subscribe(res => { this.progproblmesx = res });
         this.title = "Programming Problem";

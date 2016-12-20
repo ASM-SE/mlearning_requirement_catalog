@@ -22,12 +22,12 @@
             
                       <div *ngIf="selectedRequirement">
                         <p><b>Problems in The Teaching of Programming:</b>
-                        <a class="list_modal" *ngFor="let progproblem of requirement.rq_prog_prob; let i=index; let isLast=last"  (click)="onClickProgProblem(progproblem,ProgProblemModal)">{{progproblem}}{{isLast ? '' : ', '}}</a></p>                        
+                        <a class="list_modal" *ngFor="let progproblem of requirement.rq_prog_prob; let i=index; let isLast=last"  (click)="clickProgProblem(progproblem,ProgProblemModal)">{{progproblem}}{{isLast ? '' : ', '}}</a></p>                        
                         <p><b>Modality(ies) or Origem:</b> {{selectedRequirement.rq_modality}} </p>
                         <p><b>Modifications for M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Type of Category:</b> {{selectedRequirement.rq_type_cat}} </p>
                         <p><b>Educational Theory(ies) Envolved:</b>
-                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="onClickTheory(theory,TheoryModal)">{{theory}}{{isLast ? '' : ', '}}</a></p>
+                        <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="clickTheory(theory,TheoryModal)">{{theory}}{{isLast ? '' : ', '}}</a></p>
                         <p><b>Requirement Subcategory(ies):</b> {{selectedRequirement.rq_subcategory}} </p>            
                         <p><b>Description:</b> {{selectedRequirement.rq_description}} </p>
                         <p><b>Cross Reference (Requeriments):</b> {{selectedRequirement.rq_cross_reference}} </p>

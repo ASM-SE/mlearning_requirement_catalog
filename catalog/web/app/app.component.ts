@@ -11,3 +11,5 @@ export class AppComponent  {
   title = 'M-learning Requirement Catalog'; 
 
 }
+
+//Jhon Papa Style Guide: https://angular.io/docs/ts/latest/guide/style-guide.html
