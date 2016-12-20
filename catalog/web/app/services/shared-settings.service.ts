@@ -1,7 +1,8 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 //Service with constants of the apis from the server
 //Source: http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services
+
 @Injectable()
 export class SharedSettingsService {
 

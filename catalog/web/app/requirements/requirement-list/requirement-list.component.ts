@@ -17,7 +17,7 @@ import { Observable } from "RxJS/Rx";
 @Component({
     moduleId: module.id,
     selector: 'requirements-list',
-    templateUrl: 'requirements-list.component.html',
+    templateUrl: 'requirement-list.component.html',
     styleUrls: ['requirement-list.component.css'],  
 })
 export class RequirementsListComponent implements OnInit {  

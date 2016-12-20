@@ -8,16 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 //User imports
 import { AppComponent }  from './app.component';
 import { SharedSettingsService } from './shared/services/shared-settings.service'; //Constants to access the end points from server(s)
-import { RequirementService } from './requirements/requirement.service';    //Sevico - antigo controller (angularJS)
-import { RequirementsListComponent } from './requirements/requirements-list/requirement-list.component';
-import { ProgProblemService } from './progproblems/progproblem.service';
-import { TheoryService } from './theories/theory.service';
+//import { ProgProblemService } from './progproblems/progproblem.service';
+//import { TheoryService } from './theories/theory.service';
 
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
 
 //User Modules
 import { SharedModule } from './shared/modules/shared.module';             //BootstrapNG
+import { RequirementsModule } from './requirements/requirements.module';
 
 //importar o list
 import './shared/extensions/rxjs-extensions';
@@ -29,18 +28,17 @@ import './shared/extensions/rxjs-extensions';
       MaterialModule.forRoot(),
       FormsModule,
       HttpModule,
-      AppRoutingModule
+      AppRoutingModule,
+      RequirementsModule
       ],
   declarations: [ 
-      AppComponent,
-      RequirementsListComponent
+      AppComponent
       ],
   providers:    [
       SharedSettingsService,
-      RequirementService,
-      TheoryService,
-      ProgProblemService
-      ],
+     // TheoryService,
+    //  ProgProblemService
+      ],  
   bootstrap:    [ 
       AppComponent 
       ]
