@@ -1,4 +1,3 @@
-import {MODAL_DIRECTVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 import {Component, ViewChild, ElementRef} from "@angular/core";
 
 @Component({
@@ -7,7 +6,7 @@ import {Component, ViewChild, ElementRef} from "@angular/core";
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.css'],
    // directives: [MODAL_DIRECTVES],
-    viewProviders: [BS_VIEW_PROVIDERS]
+    //viewProviders: [BS_VIEW_PROVIDERS]
 })
 
 export class ModalComponent {

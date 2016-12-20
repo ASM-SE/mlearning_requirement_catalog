@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 
 import { Observable } from "RxJS/Rx";
 
-import { SharedSettingsService } from '../services/shared-settings.service';
+import { SharedSettingsService } from '../shared/services/shared-settings.service';
 import { Requirement } from './requirement';
 
 @Injectable()

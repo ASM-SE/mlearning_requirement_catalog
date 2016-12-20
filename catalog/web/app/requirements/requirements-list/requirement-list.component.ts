@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Requirement } from './requirement';
-import { RequirementService } from './requirement.service';
+import { Requirement } from '../requirement';
+import { RequirementService } from '../requirement.service';
 
-import { Theory } from '../theories/theory';
-import { TheoryService } from '../theories/theory.service';
+import { Theory } from '../../theories/theory';
+import { TheoryService } from '../../theories/theory.service';
 
-import { ProgProblem } from '../progproblems/progproblem';
-import { ProgProblemService } from '../progproblems/progproblem.service';
+import { ProgProblem } from '../../progproblems/progproblem';
+import { ProgProblemService } from '../../progproblems/progproblem.service';
 
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
