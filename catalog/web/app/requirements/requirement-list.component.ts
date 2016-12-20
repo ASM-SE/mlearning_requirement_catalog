@@ -12,7 +12,7 @@ import { ProgProblemService } from '../progproblems/progproblem.service';
 
 import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
-import {Observable} from "RxJS/Rx";
+import { Observable } from "RxJS/Rx";
 
 @Component({
     moduleId: module.id,

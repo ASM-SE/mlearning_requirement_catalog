@@ -20,7 +20,7 @@ import { MaterialModule } from '@angular/material';
 import { SharedModule } from './modules/shared.module';             //BootstrapNG
 
 //importar o list
-import './rxjs-extensions';
+import './shared/rxjs-extensions';
 
 @NgModule({
   imports:      [ 
