@@ -37,9 +37,6 @@ import '../shared/extensions/rxjs-extensions';
       RequirementService,
       TheoryService,
       ProgProblemsService
-      ],
-  exports: [
-      RequirementsModule
       ]     
 })
 export class RequirementsModule { }

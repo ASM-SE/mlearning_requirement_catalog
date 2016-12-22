@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }  from './app.component';
 import { SharedSettingsService } from './services/shared-settings.service'; //Constants to access the end points from server(s)
 //import { ProgProblemService } from './progproblems/progproblem.service';
-//import { TheoryService } from './theories/theory.service';
+import { SplAssetListComponent } from './splassets/splasset-list/splasset-list.component';
 
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
@@ -32,7 +32,8 @@ import './shared/extensions/rxjs-extensions';
       RequirementsModule
       ],
   declarations: [ 
-      AppComponent
+      AppComponent,
+      SplAssetListComponent
       ],
   providers:    [
       SharedSettingsService,
