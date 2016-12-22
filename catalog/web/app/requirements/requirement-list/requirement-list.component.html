@@ -4,7 +4,7 @@
       <md-list-item   *ngFor="let requirement of requirementsx; let odd=odd; let even=even" 
                       class="md-3-line md-long-text requirement"
                       [class.selected]="requirement === selectedRequirement" 
-                      (click)="onSelect(requirement)">
+                      (click)="Select(requirement)">
 
         <div class="md-list-item-text rq_list" [ngClass]="{ odd: odd, even: even }">
             <h3>{{requirement.rq_id}}</h3>    

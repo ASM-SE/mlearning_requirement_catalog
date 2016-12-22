@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
+import { Observable } from "RxJS/Rx";
+
 import { Requirement } from '../requirement';
 import { RequirementService } from '../requirements.service';
 
@@ -10,9 +13,7 @@ import { TheoryService } from '../../theories/theory.service';
 import { ProgProblem } from '../../progproblems/progproblem';
 import { ProgProblemsService } from '../../progproblems/progproblems.service';
 
-import { ComponentsHelper } from 'ng2-bootstrap/ng2-bootstrap';
 
-import { Observable } from "RxJS/Rx";
 
 @Component({
     moduleId: module.id,
@@ -40,7 +41,7 @@ export class RequirementsListComponent implements OnInit {
                         componentsHelper.setRootViewContainerRef(viewContainerRef); //ModalComponent do Bootstrap só funciona com isso!!
                 }
 
-    onSelect(requirement: Requirement): void {
+    Select(requirement: Requirement): void {
       this.selectedRequirement = requirement;
     }    
 
