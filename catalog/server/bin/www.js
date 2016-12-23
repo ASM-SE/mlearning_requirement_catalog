@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app');
-const env = require('../env');
+const env = require('../configs/env');
 
 
 app.listen(env.server.port, () => {

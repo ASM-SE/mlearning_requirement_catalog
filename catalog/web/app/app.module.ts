@@ -16,7 +16,7 @@ import { MaterialModule } from '@angular/material';
 
 //User Modules
 import { SharedModule } from './shared/shared.module';             //BootstrapNG
-import { RequirementsModule } from './requirements/requirements.module';
+import { RequirementsModule } from './splrequirements/requirements.module';
 
 //importar o list
 import './shared/extensions/rxjs-extensions';

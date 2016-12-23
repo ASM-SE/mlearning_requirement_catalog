@@ -1,7 +1,7 @@
 'use strict';
 
 let router                 = require('express').Router();
-let ProgProblemController  = require('../../controller/ProgProblemController');
+let ProgProblemController  = require('../../controllers/ProgProblemController');
 
 
 router.get('/', ProgProblemController.getProgProblems);

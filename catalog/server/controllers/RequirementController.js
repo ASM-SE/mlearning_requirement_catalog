@@ -1,42 +1,21 @@
 'use strict';
 
 let bluebird    = require('bluebird');   //??
-let debug       = require('debug')('catalog:controller:theory'); //??
-let repository  = require('../repository/ProgProblemRepository');
+let debug       = require('debug')('catalog:controller:requirement'); //??
+let repository  = require('../repositories/RequirementRepository');
 const PER_PAGE  = 10;
 
-let TheoryController = {
+let RequirementController = {
 
-getProgProblemsbyIds: (request, response, next) => {
-  var ids = request.params.pg_ids.split(',');
-  console.log(ids);
- let _query = {'pg_id':{'$in':ids}};
-
-  repository.findOne(_query)
-    .then((result) =>{
-      if (!result) {
-        let err = new Error('Program Problems not found.');
-        err.status = 500;
-        throw err;
-      }
-      return result;
-    })
-    .then(function(result) {
-      response.json(result);
-    })
-    .catch(next);
-  },
-
-
- getProgProblems: (request, response, next) =>{
+ getRequirements: (request, response, next) =>{
     // let query = {rq_id::/^RNF/}; //Contenha RNF
     //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
-  let _query = {};
-  let _fields = {};
-  repository.find(_query, _fields)
+  let query = {};
+  let fields = {};
+  repository.find(query, fields)
     .then((result) =>{
       if (!result) {
-        let err = new Error('Program Problems not found.');
+        let err = new Error('Requirements not found.');
         err.status = 500;
         throw err;
       }
@@ -55,7 +34,7 @@ getProgProblemsbyIds: (request, response, next) => {
     repository.findOne({ _id: _id })
     .then((result) =>{
       if (!result) {
-        let err = new Error('Program Problems not found.');
+        let err = new Error('Requirement not found.');
         err.status = 404;
         throw err;
       }
@@ -141,4 +120,4 @@ getProgProblemsbyIds: (request, response, next) => {
   }
 };
 
-module.exports = TheoryController;
+module.exports = RequirementController;

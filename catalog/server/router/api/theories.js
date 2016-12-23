@@ -1,7 +1,7 @@
 'use strict';
 
 let router                 = require('express').Router();
-let TheoryController  = require('../../controller/TheoryController');
+let TheoryController  = require('../../controllers/TheoryController');
 
 
 router.get('/', TheoryController.getTheories);

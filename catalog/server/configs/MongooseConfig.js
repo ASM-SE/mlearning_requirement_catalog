@@ -2,7 +2,7 @@
 
 let mongoose  = require('mongoose');
 let debug     = require('debug')('catalog:config:mongoose');
-let env    = require('../env');
+let env       = require('./env');
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(env.database.uri, env.database.credentials);

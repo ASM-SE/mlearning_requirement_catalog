@@ -9,7 +9,7 @@ const bodyParser 	= require('body-parser');
 const compression 	= require('compression'); //??
 const cors 			= require('cors');
 const debug       	= require('debug')('requirement:app');
-const AppController = require('./controller/AppController');
+const AppController = require('./controllers/AppController');
 const app 			= express();
 /* 
 app.set('views', path.join(__dirname, 'views'));		//?

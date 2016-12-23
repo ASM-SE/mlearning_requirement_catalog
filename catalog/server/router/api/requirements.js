@@ -1,7 +1,7 @@
 'use strict';
 
 let router                 = require('express').Router();
-let RequirementController  = require('../../controller/RequirementController');
+let RequirementController  = require('../../controllers/RequirementController');
 
 
 router.get('/', RequirementController.getRequirements);

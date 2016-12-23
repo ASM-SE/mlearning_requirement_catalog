@@ -1,6 +1,6 @@
 'use strict';
 
-let mongoose            = require('../config/MongooseConfig');
+let mongoose            = require('../configs/MongooseConfig');
 
 let RequirementSchema 	= mongoose.Schema({
 	rq_id: {type: String, trim: true, required: true, maxlength: 7},
