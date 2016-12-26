@@ -15,3 +15,5 @@
     "**/*-aot.ts"
   ]
 }
+
+//Solving problems with experimentalDecorators: http://stackoverflow.com/questions/38271273/experimental-decorators-warning-in-visual-studio-code
