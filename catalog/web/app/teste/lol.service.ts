@@ -6,24 +6,24 @@ import { Http } from '@angular/http';
 import { Observable } from "RxJS/Rx";
 
 import { SharedSettingsService } from '../services/shared-settings.service';
-import { Requirement } from './requirement';
+//import { Requirement } from './requirement';
 
 @Injectable()
-export class RequirementService {
+export class LolService {
     
     constructor(private http: Http, private api: SharedSettingsService){
     }
     
-    getRequirements() {
-        return this.http.get(this.api.requirements)
+    getChampions() {
+        return this.http.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
             .map(res => res.json());
     }
 
 
-    getRequirement(requirement: Requirement) {
+/*    getRequirement(requirement) {
         return this.http.get(this.api.requirements + "/" + requirement)
             .map(res => res.json());
-    }    
+    }  */  
 
 
 };

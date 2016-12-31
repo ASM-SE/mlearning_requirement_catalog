@@ -18,6 +18,11 @@ import { MaterialModule } from '@angular/material';
 import { SharedModule } from './shared/shared.module';             //BootstrapNG
 import { RequirementsModule } from './splrequirements/requirements.module';
 
+
+//Teste LOL
+import { LolService } from './teste/lol.service';
+import { LolListComponent } from './teste/teste-list/lol-list.component';
+
 //importar o list
 import './shared/extensions/rxjs-extensions';
 
@@ -33,10 +38,12 @@ import './shared/extensions/rxjs-extensions';
       ],
   declarations: [ 
       AppComponent,
-      SplAssetListComponent
+      SplAssetListComponent,
+            LolListComponent
       ],
   providers:    [
       SharedSettingsService,
+      LolService
      // TheoryService,
     //  ProgProblemService
       ],

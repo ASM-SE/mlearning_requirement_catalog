@@ -1,0 +1,17 @@
+.rq_list{
+      padding: 5px;
+}
+
+
+.list_modal{
+      cursor: pointer;
+}
+
+.even { 
+      background-color: rgb(230,230,230); 
+}
+
+.odd { 
+      background-color: white; 
+}
+
