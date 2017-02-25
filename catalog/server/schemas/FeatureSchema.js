@@ -2,7 +2,7 @@
 
 let mongoose            = require('../configs/MongooseConfig');
 
-let FeaturesSchema 	= mongoose.Schema({
+let FeatureSchema 	= mongoose.Schema({
 
     constraint: {type: String, required: true},
     name: {type: String, required: true},
@@ -11,4 +11,4 @@ let FeaturesSchema 	= mongoose.Schema({
 
 });
 
-module.exports = FeaturesSchema;
+module.exports = FeatureSchema;
