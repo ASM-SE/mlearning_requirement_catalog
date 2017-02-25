@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }  from './app.component';
 import { SharedSettingsService } from './services/shared-settings.service'; //Constants to access the end points from server(s)
 //import { ProgProblemService } from './progproblems/progproblem.service';
-import { SplAssetListComponent } from './splassets/splasset-list/splasset-list.component';
 
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
@@ -17,6 +16,7 @@ import { MaterialModule } from '@angular/material';
 //User Modules
 import { SharedModule } from './shared/shared.module';             //BootstrapNG
 import { RequirementsModule } from './splrequirements/requirements.module';
+import { FeaturesModule } from './splassets/features.module';
 
 
 //Teste LOL
@@ -34,11 +34,11 @@ import './shared/extensions/rxjs-extensions';
       FormsModule,
       HttpModule,
       AppRoutingModule,
-      RequirementsModule
+      RequirementsModule,
+      FeaturesModule
       ],
   declarations: [ 
       AppComponent,
-      SplAssetListComponent,
             LolListComponent
       ],
   providers:    [
