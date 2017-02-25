@@ -7,7 +7,7 @@
                       (click)="Select(requirement)">
 
         <div class="md-list-item-text rq_list" [ngClass]="{ odd: odd, even: even }">
-            <h3>{{requirement.rq_id}}</h3>    
+            <h3>{{requirement.rq_stid}}{{requirement.rq_id}}</h3>    
             <p><b>Requirement: </b> {{requirement.rq_requirement}} </p>
 
          
@@ -15,7 +15,7 @@
             
             <accordion-group #group [isOpen]="status.open">
               <div accordion-heading>
-                    Complete desciption of {{requirement.rq_id}}
+                    Complete desciption of {{requirement.rq_stid}}{{requirement.rq_id}}
                     <i  class="pull-right glyphicon"
                         [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
               </div>

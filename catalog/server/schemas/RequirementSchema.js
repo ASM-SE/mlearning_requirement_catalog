@@ -3,7 +3,8 @@
 let mongoose            = require('../configs/MongooseConfig');
 
 let RequirementSchema 	= mongoose.Schema({
-	rq_id: {type: String, trim: true, required: true, maxlength: 7},
+	rq_stid: {type: String, trim: true, required: true, maxlength:4},	
+	rq_id: {type: String, trim: true, required: true, maxlength:3},	
 	rq_prog_prob: {type: Array, trim: true},
 	rq_modality: {type: String, required: true},
 	rq_ml_type: {type: String, required: true},
