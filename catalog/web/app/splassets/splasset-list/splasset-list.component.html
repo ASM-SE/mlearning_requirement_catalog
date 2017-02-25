@@ -1,3 +1,25 @@
 <div class="main">
     <h1>SPL Assets</h1>
 </div>
+
+
+
+<div>
+ 
+      <md-list-item   *ngFor="let feature of featuresx; let odd=odd; let even=even" 
+                      class="md-3-line md-long-text requirement">
+
+        <div class="md-list-item-text rq_list" [ngClass]="{ odd: odd, even: even }">
+            <h3>{{feature.name}}</h3>    
+            <p><b>Constraint: </b> {{feature.constraing}} </p>
+            <p><b>Level: </b> {{feature.level}} </p>
+            <p><b>Father Node: </b> {{feature.father_node}} </p>                        
+
+         
+
+        </div>
+
+
+      </md-list-item>   
+
+</div>
