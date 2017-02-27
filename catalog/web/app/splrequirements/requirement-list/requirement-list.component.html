@@ -10,8 +10,9 @@
             <h3>{{requirement.rq_stid}}{{requirement.rq_id}}</h3>    
             <p><b>Requirement: </b> {{requirement.rq_requirement}} </p>
 
-         
+ 
 
+ 
             
             <accordion-group #group [isOpen]="status.open">
               <div accordion-heading>
@@ -23,27 +24,35 @@
                       <div *ngIf="selectedRequirement">
                         <p><b>Problems in The Teaching of Programming:</b>
                         <a class="list_modal" *ngFor="let progproblem of requirement.rq_prog_prob; let i=index; let isLast=last"  (click)="clickProgProblem(progproblem,ProgProblemModal)">{{progproblem}}{{isLast ? '' : ', '}}</a></p>                        
+
+      <div bsModal #ProgProblemModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+              <div class="modal-header">
+                    <button type="button" class="close" (click)="ProgProblemModal.hide()" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">{{title}}</h4>
+              </div>
+              <div class="modal-body">
+
+                    <p><b>Programming Problem Id: </b>{{progproblmesx.pg_id}}</p>
+                    <p><b>Category: </b>{{progproblmesx.pg_category}}</p>
+                    <p><b>Description: </b>{{progproblmesx.pg_description}}</p>    
+                                              
+            
+              </div>
+        </div>
+      </div>
+    </div>   
+                          
                         <p><b>Modality(ies) or Origem:</b> {{selectedRequirement.rq_modality}} </p>
                         <p><b>Modifications for M-learning:</b> {{selectedRequirement.rq_ml_modification}} </p>
                         <p><b>Type of Category:</b> {{selectedRequirement.rq_type_cat}} </p>
                         <p><b>Educational Theory(ies) Envolved:</b>
                         <a class="list_modal" *ngFor="let theory of requirement.rq_theories; let i=index; let isLast=last"  (click)="clickTheory(theory,TheoryModal)">{{theory}}{{isLast ? '' : ', '}}</a></p>
-                        <p><b>Requirement Subcategory(ies):</b> {{selectedRequirement.rq_subcategory}} </p>            
-                        <p><b>Description:</b> {{selectedRequirement.rq_description}} </p>
-                        <p><b>Cross Reference (Requeriments):</b> {{selectedRequirement.rq_cross_reference}} </p>
-                        <p><b>Type of Variability:</b> {{selectedRequirement.rq_variability}} </p>
-                       
-                      </div>
 
-            </accordion-group>
-        </div>
-
-
-      </md-list-item>   
-      </accordion>
-
-
-
+        
     <div bsModal #TheoryModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -72,28 +81,24 @@
     </div>
 
 
-    <div bsModal #ProgProblemModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-              <div class="modal-header">
-                    <button type="button" class="close" (click)="ProgProblemModal.hide()" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">{{title}}</h4>
-              </div>
-              <div class="modal-body">
+                        <p><b>Requirement Subcategory(ies):</b> {{selectedRequirement.rq_subcategory}} </p>            
+                        <p><b>Description:</b> {{selectedRequirement.rq_description}} </p>
+                        <p><b>Cross Reference (Requeriments):</b> {{selectedRequirement.rq_cross_reference}} </p>
+                        <p><b>Type of Variability:</b> {{selectedRequirement.rq_variability}} </p>
+                       
+                      </div>
 
-                    <p><b>Programming Problem Id: </b>{{progproblmesx.pg_id}}</p>
-                    <p><b>Category: </b>{{progproblmesx.pg_category}}</p>
-                    <p><b>Description: </b>{{progproblmesx.pg_description}}</p>    
-                                              
-            
-              </div>
+            </accordion-group>
         </div>
-      </div>
-    </div>    
+
+
+      </md-list-item>   
+      </accordion>
+
+
+
+
 
 
 </div>      
 
-  

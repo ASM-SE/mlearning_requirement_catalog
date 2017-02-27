@@ -4,9 +4,9 @@
   "description": "Servidor do catálogo",
   "main": "app.js",
   "scripts": {
-    "test": "", 
+    "test": "",
     "prestart": "npm install",
-    "start": "nodemon ./bin/www" 
+    "start": "nodemon ./bin/www"
   },
   "author": "Anderson Marcolino",
   "license": "GPL-3.0",

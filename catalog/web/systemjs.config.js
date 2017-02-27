@@ -4,6 +4,7 @@
  */
 (function (global) {
   System.config({
+
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/'
@@ -37,7 +38,7 @@
     packages: {
       app: {
         main: './main.js',
-        defaultExtension: 'js'
+        defaultExtension: 'js',
       },
       rxjs: {
         defaultExtension: 'js'

@@ -13,10 +13,13 @@ import { SharedSettingsService } from './services/shared-settings.service'; //Co
 //Angular Material 2
 import { MaterialModule } from '@angular/material';
 
+
 //User Modules
 import { SharedModule } from './shared/shared.module';             //BootstrapNG
 import { RequirementsModule } from './splrequirements/requirements.module';
 import { FeaturesModule } from './splassets/features.module';
+
+
 
 
 //Teste LOL
@@ -30,7 +33,7 @@ import './shared/extensions/rxjs-extensions';
   imports:      [ 
       BrowserModule,
       SharedModule,
-      MaterialModule.forRoot(),
+      MaterialModule.forRoot(),      
       FormsModule,
       HttpModule,
       AppRoutingModule,
@@ -39,7 +42,7 @@ import './shared/extensions/rxjs-extensions';
       ],
   declarations: [ 
       AppComponent,
-            LolListComponent
+      LolListComponent
       ],
   providers:    [
       SharedSettingsService,
