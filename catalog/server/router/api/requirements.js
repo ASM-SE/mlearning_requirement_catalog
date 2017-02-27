@@ -3,7 +3,7 @@
 let router                 = require('express').Router();
 let RequirementController  = require('../../controllers/RequirementController');
 
-
+router.get('/agre/',RequirementController.getRequirementsAgre);
 router.get('/', RequirementController.getRequirements);
 router.get('/:_id', RequirementController.byId);
 router.post('/', RequirementController.create);

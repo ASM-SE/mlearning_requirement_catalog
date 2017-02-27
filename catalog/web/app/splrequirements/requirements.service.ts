@@ -25,6 +25,11 @@ export class RequirementService {
             .map(res => res.json());
     }    
 
+    getRequirementsAgre() {
+        return this.http.get(this.api.requirements + "/agre/")
+            .map(res => res.json());
+    }        
+
 
 };
 

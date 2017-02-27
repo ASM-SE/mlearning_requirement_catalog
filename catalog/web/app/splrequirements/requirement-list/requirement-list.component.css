@@ -15,3 +15,5 @@
       background-color: white; 
 }
 
+
+.body.ngdialog-open { overflow: initial !important; }

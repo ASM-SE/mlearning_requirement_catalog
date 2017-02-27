@@ -29,6 +29,31 @@ let RequirementController = {
 
 
 
+ getRequirementsAgre: (request, response, next) =>{
+    // let query = {rq_id::/^RNF/}; //Contenha RNF
+    //let query = {rq_id: /^((?!RNF).)/};  //Não contenha RNF
+  let query = {};
+  let fields = {};
+  repository.aggregate([	{$sort:{"rq_stid":1,"rq_id":1}}])
+    .then((result) =>{
+      if (!result) {
+        let err = new Error('Requirements not found.');
+        err.status = 500;
+        throw err;
+      }
+      return result;
+    })
+    .then(function(result) {
+      response.json(result);
+    })
+    .catch(next);
+  },
+
+
+
+
+
+
   byId: (request, response, next) =>{
     let _id = request.params._id;
     repository.findOne({ _id: _id })

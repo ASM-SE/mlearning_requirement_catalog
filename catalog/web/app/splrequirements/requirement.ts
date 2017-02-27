@@ -1,6 +1,7 @@
 export class Requirement {
 
 
+	rq_stid: string;
 	rq_id: string;
 	rq_prod_prob: string;
 	rq_prog_prob: any[];
@@ -16,4 +17,6 @@ export class Requirement {
 	rq_bibliography:  string;
 	rq_variability:  string;
 
+
 }
+

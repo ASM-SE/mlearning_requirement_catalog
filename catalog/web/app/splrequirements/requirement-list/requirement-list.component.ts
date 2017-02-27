@@ -28,6 +28,7 @@ export class RequirementsListComponent implements OnInit {
     progproblmesx: ProgProblem[] = [];
     selectedRequirement: Requirement;
     result: any;
+    res: any;
     title: any; //Modal title
     status: string = ''; //Acordion Bootstrap status
     constructor(private viewContainerRef: ViewContainerRef,
@@ -48,7 +49,8 @@ export class RequirementsListComponent implements OnInit {
 
 
     ngOnInit(): void {  //Idem ao init-form
-        this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
+        //this.reqSvc.getRequirements().subscribe(res => { this.requirementsx = res });
+        this.reqSvc.getRequirementsAgre().subscribe(res => { this.requirementsx = res });
     }
 
 
